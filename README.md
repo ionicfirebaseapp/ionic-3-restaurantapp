@@ -104,7 +104,7 @@ Linkedin: <https://www.linkedin.com/company/ionicfirebaseapp>
 
 Instagram: <https://www.instagram.com/ionicfirebaseapp>
 
-### Most Populr Technologies & Products based on User Choice Last Month
+### Most Popular Technologies & Products based on User Choice Last Month
 
 Flutter App: Browse Flutter Application @ https://www.ionicfirebaseapp.com/products/category/Flutter-App
 
