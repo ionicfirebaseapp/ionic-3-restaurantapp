@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>{{"Orders" | translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only color="royal" (click)="navcart()">
+                <ion-icon name="cart"></ion-icon>
+                <ion-badge class="carts" item-right color="danger">{{noOfItems}}</ion-badge>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div>
+        <ion-list class="orders-list">
+            <ion-card class="orders-item" *ngFor="let order of ordersDetails; let i =index;">
+                <ion-row>
+                    <!-- <ion-row *ngFor="let item of order ; let i =index "> -->
+                        <ion-col col-4>
+                            <img src="{{order.item.thumb}}" alt="">
+                        </ion-col>
+                        <ion-col col-5>
+                            <p class="item-name">
+                                <strong>{{order.item.title}}</strong>
+                            </p>
+                            <p class="item-price">Price: <strong>{{currency?.currencySymbol}}{{order.item.price.value}}</strong></p>
+                            <p class="date">Qty: <strong>{{order.item.itemQunatity}}</strong></p>
+                        </ion-col>
+                        <ion-col col-3>
+                            <button class="btn-view" ion-button color="primary" (click)="orderDetails(i)">
+                                {{"View" | translate}}
+                            </button>
+                            <button class="btn-view" ion-button color="primary" (click)="orderStatus(order.item.itemId)">
+                                {{"Status" | translate}}
+                            </button>
+                        </ion-col>
+                    <!-- </ion-row> -->
+                </ion-row>
+            </ion-card>
+        </ion-list>
+    </div>
+</ion-content>

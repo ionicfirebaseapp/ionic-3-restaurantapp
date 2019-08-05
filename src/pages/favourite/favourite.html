@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{"Favourite" | translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only color="royal" class="header-btn" (click)="navcart()">
+                <ion-icon name="cart"></ion-icon>
+                <ion-badge class="carts" item-right color="danger">{{noOfItems}}</ion-badge>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content [ngClass]="{bg:!isFavourite()}">
+    <div *ngIf="!isFavourite()">
+        <ion-row>
+            <ion-icon class="empty-cart" name="heart"></ion-icon>
+        </ion-row>
+        <h4>Wish List is empty!</h4>
+    </div>
+
+    <div *ngIf="isFavourite()">
+        <ion-card *ngFor="let favouriteItem of favouriteItems">
+            <ion-list>
+                <ion-item>
+                    <ion-thumbnail item-left>
+                        <img src={{favouriteItem.thumb}}>
+                    </ion-thumbnail>
+                    <p class="heading">{{favouriteItem.title}}</p>
+                    <p>{{favouriteItem.description}}</p>
+                    <div class="footer-btn">
+                        <button class="add" ion-button (click)="buyNow(favouriteItem.$key)">
+                            <ion-icon name="cart"></ion-icon>
+                            &nbsp; {{"Buy Now" | translate}}
+                        </button>
+                        <button color="danger" class="delete" ion-button outline (click)="removeFromFavourites(favouriteItem.$key)">
+                            <ion-icon name="trash">
+                            </ion-icon>
+                        </button>
+                    </div>
+                </ion-item>
+            </ion-list>
+        </ion-card>
+    </div>
+</ion-content>

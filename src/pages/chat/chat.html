@@ -1,0 +1,64 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{"Chat" | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content class="chat-bg">
+    <section>
+        <span *ngFor="let data of messageList">
+            <ion-row *ngIf="data.sendBy =='User'">
+                <ion-col col-3>
+                    <img class="thumb" src="{{userDisplayPic}}">
+                </ion-col>
+
+                <ion-col class="chat-box">
+                    <div class="chat-header">
+                        <span *ngIf="data.createdAt >= sevenDaysBack" class="time">
+                            {{data.createdAt | amTimeAgo}}</span>
+                        <span *ngIf="data.createdAt <=  sevenDaysBack" class="time">
+                            {{data.createdAt | amCalendar}}</span>
+                    </div>
+                    <p class="msg" text-wrap>{{data.message}}</p>
+                </ion-col>
+            </ion-row>
+            <ion-row *ngIf="data.sendBy =='Admin'">
+                <ion-col class="chat-box-right">
+                    <div class="chat-header">
+                        <span *ngIf="data.createdAt >= sevenDaysBack" class="time">
+                            {{data.createdAt | amTimeAgo}}</span>
+                        <span *ngIf="data.createdAt <=  sevenDaysBack" class="time">
+                            {{data.createdAt | amCalendar}}</span>
+                    </div>
+                    <p class="msg rt" text-wrap>{{data.message}}</p>
+                </ion-col>
+
+                <ion-col col-3>
+                    <img class="thumb right" src="assets/icon/admin.jpg">
+                </ion-col>
+            </ion-row>
+        </span>
+        <!-- ddd -->
+    </section>
+    <ion-footer>
+        <ion-toolbar>
+            <form #f="ngForm" (ngSubmit)="sendMessage(f)">
+                <ion-row class="chat-footer">
+                    <ion-col col-10>
+                        <ion-item>
+                            <ion-input type="text" placeholder="{{'Type message...' | translate}}" [(ngModel)]=chatMessage.message name="message" required
+                                clearInput>
+                            </ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col col-2>
+                        <button ion-button icon only type="submit" [disabled]="!f.valid">
+                            <ion-icon class="enter-btn" name="send"></ion-icon>
+                        </button>
+                    </ion-col>
+                </ion-row>
+            </form>
+        </ion-toolbar>
+    </ion-footer>
+</ion-content>

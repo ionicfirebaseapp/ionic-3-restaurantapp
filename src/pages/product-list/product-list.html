@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title class="title">{{"Restaurant App" | translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only color="royal" (click)="navcart()" class="header-btn-cart">
+                <ion-icon name="cart"></ion-icon>
+                <ion-badge class="carts" item-right color="danger">{{noOfItems}}</ion-badge>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="{{'Type Item Name' | translate}}">
+    </ion-searchbar>
+    <ion-list *ngFor="let item of items ; let i=index ">
+        <!-- list -->
+        <ion-item text-wrap (click)="navigate(item.$key)">
+            <!-- item -->
+            <ion-row class="catagory">
+                <!-- row -->
+                <ion-col col-6>
+                    <!-- col with 50  width -->
+                    <img src={{item.thumb}} alt="foodname" />
+                </ion-col>
+                <ion-col col-6>
+                    <!-- col with 50% width -->
+                    <p class="item-name">{{item.title}}</p>
+                    <p class="item-detail" text-wrap>
+                        <span>{{item.description | limitPipe:150}}</span>
+                    </p>
+                    <p class="item-detail">{{"Price :" | translate}}
+                        <span class="item-price">{{currency?.currencySymbol}} {{item.price[0].value}}
+                        </span>
+                    </p>
+                    <div *ngIf="item.reviews" class="product-rating">
+                        <!-- rating -->
+                        <rating name="rating" id="rating" [(ngModel)]="item.reviewData" readOnly="true" max="5" emptyStarIconName="star-outline"
+                            halfStarIconName="star-half" starIconName="star" nullable="false">
+                        </rating>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <!--end row -->
+        </ion-item>
+        <!-- item -->
+    </ion-list>
+
+</ion-content>

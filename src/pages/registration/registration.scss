@@ -1,0 +1,39 @@
+page-registration {
+  .item {
+    background-color: rgba(119, 119, 119, 0.8);
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+  .item.item-block .item-inner {
+    border-bottom: 0;
+  }
+  .item-input .label {
+    color: $white;
+  }
+  .login {
+    background: url("../assets/img/bg.jpg") no-repeat center;
+    background-size: cover;
+    color: $white;
+    .logo {
+      width: 86px;
+      display: block;
+      margin: 0 auto;
+      margin-top: 4em;
+      padding-bottom: 2em;
+    }
+  }
+  .login-btn {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    height: 4.4rem;
+    background-color: $primary;
+  }
+  .social-icon {
+    width: 86px;
+    padding: 0px 20px;
+  }
+}

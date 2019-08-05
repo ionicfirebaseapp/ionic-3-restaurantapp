@@ -1,0 +1,87 @@
+page-booking-history {
+
+  .card_content {
+    background: url("../../assets/img/offer2.jpg") no-repeat center;
+    background-size: cover;
+    .overlay_top {
+      position: relative;
+      height: 55px;
+      width: 100%;
+      display: inline-flex;
+      background: rgba(0, 0, 0, 0.6666);
+      .id {
+        color: $white;
+      }
+      .logo {
+        padding: 10px;
+        width: 60px;
+        height: 60px;
+      }
+    }
+    .overlay_content {
+     
+      width: 100%;
+      background: rgba(0, 0, 0, 0.57);
+      .name {
+        display: inline-flex;
+        .icon {
+          font-size: 30px;
+          color: $white-a;
+        }
+        .descrption {
+          padding: 9px;
+          margin-left: 10px;
+          color: $white-a;
+        }
+      }
+      .details {
+        background: rgba(0, 0, 0, 0.37);
+        height: 60px;
+        .persons {
+          font-size: 24px;
+          color: $primary;
+          font-weight: 500;
+        }
+        .subline {
+          font-size: 10px;
+          color: $white-a;
+        }
+      }
+      .date {
+        @extend .name;
+        .icon {
+          font-size: 17px;
+          margin-left: 30px;
+        }
+        .descrption {
+          padding: 0;
+        }
+      }
+      .time {
+        @extend .date;
+      }
+    }
+    .overlay_bottom {
+      @extend .overlay_top;
+      color: $white-b;
+      .status {
+        display: inline-flex;
+        .icon {
+          font-size: 20px;
+          margin-top: -4px;
+          margin-left: 20px;
+          color: red;
+        }
+      }
+      .rating {
+        display: inline-flex;
+        .star {
+          margin-top: -3px;
+          font-size: 12px;
+          margin-left: 16px;
+          color: goldenrod;
+        }
+      }
+    }
+  }
+}

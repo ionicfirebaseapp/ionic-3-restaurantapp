@@ -1,0 +1,20 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{"News-detail" | translate}}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-card>
+        <img src="{{newsDetails.thumb}}">
+        <p class="news-head" center>{{newsDetails.title}}:</p>
+        <p class="news-time">09.02.2017,10:20 am</p>
+        <ion-card-content>
+            <p>{{newsDetails.description}}. </p>
+        </ion-card-content>
+
+    </ion-card>
+</ion-content>

@@ -1,0 +1,33 @@
+page-contact {
+  .contact {
+    background: url("../assets/img/c3.jpg") no-repeat center;
+    background-size: cover;
+  }
+  .contact-head {
+    margin-top: 2em;
+    text-align: center;
+    color: $white;
+    font-size: 2.5rem;
+  }
+  .submit-btn {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    height: 46px;
+    background-color: $primary;
+  }
+  .item {
+    background-color: rgba(119, 119, 119, 0.6);
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+  .item.item-block .item-inner {
+    border-bottom: 0px;
+  }
+  .item-input .label {
+    color: $white;
+  }
+}

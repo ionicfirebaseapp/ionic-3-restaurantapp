@@ -1,0 +1,81 @@
+<ion-header>
+    <ion-navbar hideBackButton="true">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{'Login' | translate }}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="login">
+    <img class="logo" src="assets/img/logo-icon.png">
+
+    <!--inputs-->
+    <!--email-->
+    <form [formGroup]="valForm" (submit)="OnLogin($event, valForm.value)">
+        <ion-row>
+            <ion-col col-12>
+                <ion-item>
+                    <ion-label>{{"Email:" | translate}}</ion-label>
+                    <ion-input class="form-control" id="exampleInputEmail1" type="email" name="email" placeholder="Enter email"
+                        autocomplete="off" formControlName="email" required></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <!--password-->
+        <ion-row>
+            <ion-col col-12>
+                <ion-item>
+                    <ion-label>{{"Password:" | translate}}</ion-label>
+                    <ion-input id="exampleInputPassword1" type="password" name="password" placeholder="Password"
+                        formControlName="password" required=""></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+
+        <!--forget-->
+        <ion-row>
+            <ion-col col-12 (click)="onClickForgotPassword()">
+                <p text-center>{{"FORGOT PASSWORD ?" | translate}}</p>
+            </ion-col>
+        </ion-row>
+        <!--button-->
+        <ion-row>
+            <ion-col col-12>
+                <button class="login-btn" type="submit" [disabled]="!valForm.valid" ion-button>{{"Login" | translate}}
+                </button>
+            </ion-col>
+        </ion-row>
+    </form>
+
+    <!--login with-->
+    <ion-row>
+        <ion-col col-12>
+            <p text-center>{{"LOGIN WITH" | translate}}</p>
+        </ion-col>
+    </ion-row>
+
+    <!--Social login-->
+    <ion-row>
+        <ion-col text-center col-12>
+            <span (click)="doFbLogin()">
+                <img class="social-icon" src="assets/img/fb.png">
+            </span>
+            <span (click)="googleLogin()">
+                <img class="social-icon" src="assets/img/g+.png">
+            </span>
+            <span (click)="twitterLogin()">
+                <img class="social-icon" src="assets/img/twitter.png">
+            </span>
+        </ion-col>
+    </ion-row>
+
+    <!--go to registration-->
+    <ion-row>
+        <ion-col col-12>
+            <a (click)="Register()">
+                <p text-center>{{"REGISTER NOW !" | translate}}</p>
+            </a>
+        </ion-col>
+    </ion-row>
+</ion-content>

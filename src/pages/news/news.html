@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{"News" | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content [ngClass]="{bg:!isNews()}">
+    <div *ngIf="!isNews()">
+        <ion-row>
+            <ion-icon class="empty-news" name="timer" item-left></ion-icon>
+        </ion-row>
+        <h4>No News</h4>
+    </div>
+    <div *ngIf="isNews()">
+        <ion-list>
+            <ion-item *ngFor="let news of newsData" (click)="newsDetail(news.$key)">
+                <ion-thumbnail item-left>
+                    <img src="{{news.thumb}}">
+                </ion-thumbnail>
+                <h2>{{news.title}}:- </h2>
+                <p>{{news.description | limitPipe:50}}</p>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>

@@ -1,0 +1,38 @@
+page-order-list {
+    .orders-item{
+        padding: 12px 14px 6px 20px;
+        color: #666;
+        margin-bottom: 18px;
+        h5{
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        p{
+            margin-bottom: 12px; 
+        }
+        h6{
+            
+        }
+        .status{
+            margin-top: 5px;
+            strong{
+                color: #00ce0c;
+            }
+        }
+    }
+
+.empty-list{
+    opacity: 0.8;
+    margin-top: 30%;
+    text-align: center;
+    ion-icon{
+      color: $primary;
+      font-size: 50px;
+    }
+    p{
+      color: $grey;
+      margin-top: 10px;
+      font-size: 23px;
+    }
+  }
+}

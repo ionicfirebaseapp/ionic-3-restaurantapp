@@ -1,0 +1,58 @@
+page-order-details {
+
+  .card-title {
+    position: absolute;
+    font-size: 2em;
+    width: 100%;
+    color: #fff;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 3px;
+    text-align: center;
+  }
+  .details {
+    padding: 1em;
+  }
+  .check {
+    color: $primary;
+    font-weight: 700;
+    font-size: 1.4em;
+  }
+  .data {
+    color: $grey;
+  }
+  .amount {
+    color: $dark-grey;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .pay {
+    @extend .data;
+    font-size: 12px;
+  }
+  .btn-add-to-cart {
+    background-color: $primary !important;
+    color: #fff;
+
+  }
+  .product-rating {
+    ul {
+      padding: 0 1px;
+      margin: 0;
+
+      &.rating li {
+        padding: 1px !important;
+        background: none;
+        color: #ffb400;
+
+        ion-icon {
+          font-size: 25px;
+        }
+      }
+    }
+  }
+  .rating-Button {
+    background-color: $primary;
+
+  }
+}

@@ -1,0 +1,85 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title class="title">{{"Restaurant App" | translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only color="royal" (click)="navcart()" class="header-btn-cart">
+                <ion-icon name="cart"></ion-icon>
+                <ion-badge class="carts" item-right color="danger">{{noOfItems}}</ion-badge>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="item-page">
+    <ion-row class="productImage">
+        <img src={{menuItems.thumb}} alt="{{menuItems.title}} ">
+
+
+    </ion-row>
+    <!-- first-row -->
+    <!--favourite-->
+    <span clear text-center *ngIf="isLiked">
+        <ion-icon name="heart" class="fav" (click)="removeFevrt(menuItems.$key)"></ion-icon>
+    </span>
+    <span clear text-center *ngIf="!isLiked">
+        <ion-icon name="heart" class="fav heart-clicked" (click)="addToFevrt(menuItems.$key)"></ion-icon>
+    </span>
+    <ion-row>
+        <ion-col col-6>
+            <div class="count">
+                <span class="item-count" (click)="removeQuantity()">
+                    -
+                </span>
+                <span class="item-count show-count">
+                    {{count}}
+                </span>
+                <span class="item-count" (click)="addQuantity()">
+                    +
+                </span>
+            </div>
+        </ion-col>
+
+        <ion-col col-6>
+            <a (click)="addToCart()" ion-button icon-left full class="btn-add-to-cart">
+                <ion-icon name="cart"></ion-icon>
+                &nbsp; {{"ADD TO CART" | translate}}
+            </a>
+        </ion-col>
+    </ion-row>
+    <!-- row-2 -->
+    <ion-list radio-group class="size-list">
+        <ion-list-header class="size-list-header" text-center>
+            {{"Size and prices" | translate}}
+        </ion-list-header>
+        <ion-item *ngFor="let item of menuItems.price; let i= index" class="size-list-item">
+            <ion-label *ngIf="item.specialPrice"> {{item.pname}}
+                <span class="cut">{{currency?.currencySymbol}}{{item.value}}</span>
+                <span class="offer-p">{{currency?.currencySymbol}}{{item.specialPrice |number:0}}</span>
+            </ion-label>
+            <ion-label *ngIf="!item.specialPrice"> {{item.pname}} {{currency?.currencySymbol}}{{item.value}}</ion-label>
+            <ion-radio class="checked" (ionSelect)="sizeOptions(item)"></ion-radio>
+        </ion-item>
+    </ion-list>
+    <ion-list class="extra-list" *ngIf="menuItems.extraOptions != null">
+        <ion-list-header class="header" text-center>{{"Add extra choice" | translate }}</ion-list-header>
+        <ion-item *ngFor="let option of menuItems.extraOptions; let i= index" class="list-item">
+            <ion-label>{{option.name}} ({{currency?.currencySymbol}}{{option.value}})</ion-label>
+            <ion-toggle (ionChange)="checkOptions(option)"></ion-toggle>
+        </ion-item>
+    </ion-list>
+
+    <ion-row class="button-fixed">
+        <ion-col col-6>
+            <a (click)="addToCart()" ion-button icon-left full class="btn-add-to-cart">
+                <ion-icon name="cart"></ion-icon>
+                &nbsp; {{"CHECKOUT" | translate}}
+            </a>
+        </ion-col>
+        <ion-col col-6>
+            <a (click)="home()" ion-button icon-left full class="btn-add-to-cart">
+                <ion-icon name="basket"></ion-icon>
+                &nbsp; {{"KEEP SHOPPING" | translate}}
+            </a>
+        </ion-col>
+    </ion-row>
+</ion-content>

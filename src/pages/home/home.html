@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title class="title">{{"Restaurant App" | translate}}
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="navcart()" class="header-btn-cart">
+        <ion-icon name="cart"></ion-icon>
+        <ion-badge class="carts" item-right color="danger">{{noOfItems}}</ion-badge>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-grid class="grid">
+    <ion-row>
+      <!-- first row -->
+      <ion-slides pager initialSlide=0 speed=2000 loop=true dir="rtl">
+        <ion-slide *ngFor="let item of ComingData">
+          <div class="overlay">
+            <img src={{item.thumb}} class="slider-img">
+          </div>
+          <div class="card-title">{{"Featured Product" | translate}}</div>
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+    <!-- first row -->
+    <!-- second-row -->
+
+    <h2 text-center>{{"Categories" | translate}}</h2>
+
+    <ion-row class="categories">
+      <ion-col col-6 *ngFor="let item of Categories" (click)="navigate(item.$key)">
+        <img src="{{item.thumb}}" />
+        <p class="text-over-img">{{item.title}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

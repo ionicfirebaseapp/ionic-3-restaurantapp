@@ -1,0 +1,87 @@
+page-checkout {
+  .content {
+    background-image: url(../assets/img/address-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .card-title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: $white;
+  }
+  .card-type {
+    padding: 0 1.8rem;
+    .col {
+      padding: 0;
+    }
+    .radio-item {
+      border: 1px solid rgba(0, 0, 0, 0.1) !important;
+      padding: 4px 10px;
+      margin-bottom: 1.2rem;
+      .radio {
+        margin-left: 13px !important;
+      }
+    }
+    .radio-item.item-radio-checked {
+      border-color: $primary-lighter !important;
+      .label {
+        color: $primary;
+      }
+    }
+    img {
+      height: 34px;
+      width: 80px;
+    }
+    .item-inner {
+      border-bottom: 0 !important;
+    }
+  }
+  //card-type -end
+  .form-title {
+    font-weight: 600;
+  }
+  .payment {
+    margin: 0 19px;
+    .form-data {
+      .col {
+        padding: 0;
+      }
+      .item {
+        border-color: #d4d4d4 !important;
+        border-left: 0 !important;
+        border-right: 0 !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        height: 52px !important;
+        padding-left: 0px;
+        .icon {
+          color: #a7a3a0;
+          padding: 5px 0 0 0;
+          margin-left: 8px;
+        }
+      }
+      .form-half {
+        .item {
+          border: 0;
+        }
+        .right {
+          border-left: 1px solid #d4d4d4 !important;
+        }
+      }
+    }
+  }
+
+  .btn-wrapper {
+    padding: 0 1.6rem;
+  }
+  .button {
+    background-color: $primary !important;
+    height: 46px;
+    font-size: 1.8rem;
+    border-radius: 0;
+    margin-top: 1em;
+  }
+}

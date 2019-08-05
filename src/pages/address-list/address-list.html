@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title class="title">{{"Delivery Options" | translate}}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+    <!--amount calculation-->
+    <ion-row class="amount-block">
+        <ion-col col-6>
+            <p class="total"> {{"Order Total:" | translate}}
+                <span class="currency"> {{currency?.currencySymbol}} {{payTotal | number:'.2-2'}}
+                </span>
+            </p>
+        </ion-col>
+        <ion-col col-6>
+            <p class="total right">Loyality Points:
+                <span class="currency">{{ loyaltyPoints}}</span>
+            </p>
+        </ion-col>
+        <ion-item class="loyality-check">
+            <ion-label>Use Loyality Point</ion-label>
+            <ion-checkbox [disabled]="loyaltyPoints <loyaltyLimit" checked="checked" (ionChange)="updateLoyality($event)"></ion-checkbox>
+        </ion-item>
+        <p class="warning" *ngIf="loyaltyPoints <loyaltyLimit">you should have minimum {{loyaltyLimit}} points to use loyalty points</p>
+        <div *ngIf="checked == true">
+            <p class="total"> Amount to be paid:
+                <span class="currency"> {{currency?.currencySymbol}} {{orderDetails.grandTotal | number:'.2-2'}}</span>
+            </p>
+        </div>
+    </ion-row>
+    <!--pick up/delivery option-->
+
+    <div>
+        <ion-list radio-group class="size-list">
+            <!--New  Address-->
+            <ion-item class="add" (click)="addAddress()">{{"Add New Address" | translate}}
+                <ion-icon name="add"></ion-icon>
+            </ion-item>
+        </ion-list>
+        <!--saved address list-->
+        <ion-list radio-group class="address-radio">
+            <ion-item *ngFor="let address of addressList">
+                <ion-label>
+                    <p class="show-address">{{address.name}} </p>
+                    <p class="show-address">{{address.address}}</p>
+                    <p class="show-address">{{address.city}}</p>
+                    <p class="show-address">{{address.pincode}}</p>
+                </ion-label>
+                <ion-radio (ionSelect)="selectAddress(address.$key,address)"></ion-radio>
+            </ion-item>
+        </ion-list>
+        <button ion-button block class="continue-btn" (click)="checkOut()">{{"Continue" | translate}} &nbsp;
+            <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+    </div>
+</ion-content>

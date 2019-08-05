@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{"Offers" | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-row class="full-slide">
+        <!-- first row -->
+        <ion-slides initialSlide=0 speed=1000 loop=true>
+            <ion-slide *ngFor="let data of offerData">
+                <div class="overlay">
+                    <img src="{{data.thumb}}" class="slider-img">
+                    <div class="offer-label">
+                        <span class="square text-center light assertive-bg ng-binding">{{data.offerPercentage}}%</span>
+                        <i class="triangle"></i>
+                    </div>
+                    <div class="card-title">
+                        <ion-icon name="arrow-dropleft" (click)="gotoPrevSlide()"></ion-icon>
+                        &nbsp;&nbsp;&nbsp; {{data.title}} &nbsp;&nbsp;&nbsp;
+                        <ion-icon name="arrow-dropright" (click)="gotoNextSlide()"></ion-icon>
+                    </div>
+                </div>
+
+                <p class="price">
+                    <b>{{"Original Price :" | translate}}</b>
+                    <span class="total line">{{currency?.currencySymbol}}{{data.price[0].value}}</span>
+                </p>
+                <p class="price">
+                    <b>{{"Offer Price :" | translate}} </b>
+                    <span class="total">{{currency?.currencySymbol}}{{data.price[0].specialPrice | number:0}}</span>
+                </p>
+                <p class="desc">
+                    <b>{{"Product Description :" | translate}} </b> {{data.description}}</p>
+
+
+                <!-- first row -->
+                <!--botton-->
+                <a (click)="addToCart(data.$key)" ion-button icon-left full class="btn-add-to-cart">
+                    <ion-icon name="cart">
+
+                    </ion-icon>
+                    {{"Buy Now" | translate}}
+                </a>
+            </ion-slide>
+        </ion-slides>
+    </ion-row>
+</ion-content>

@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="title">Book a Table</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="content-wrap">
+  <div class="side-headline">
+    <p class="heading"> Select Date and Time to Book Table!</p>
+  </div>
+  <div class="order">
+    <ion-label class="form">&nbsp;&nbsp;Select Date:</ion-label>
+    <div class="select-box">
+      <ion-item class="data-holder">
+        <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="date"></ion-datetime>
+        <ion-label>
+          <ion-icon name="calendar" class="icons"></ion-icon>
+        </ion-label>
+      </ion-item>
+    </div>
+  </div>
+  <!--order-->
+  <div class="order">
+    <ion-label class="form">&nbsp;&nbsp;Select Time:</ion-label>
+    <div class="select-box">
+      <ion-item class="data-holder">
+        <ion-datetime displayFormat="hh-mm" [(ngModel)]="time"></ion-datetime>
+        <ion-label>
+          <ion-icon name="time" class="icons"></ion-icon>
+        </ion-label>
+      </ion-item>
+    </div>
+  </div>
+  <!--order-->
+  <div class="order">
+    <ion-label class="form">&nbsp;&nbsp;Select No. of Guests:</ion-label>
+    <div class="select-box">
+      <ion-item class="data-holder">
+        <!-- <ion-item> -->
+        <ion-label>No. of Guests&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ion-label>
+        <ion-select [(ngModel)]="person">
+          <ion-option value="1">1 person</ion-option>
+          <ion-option value="2">2 persons</ion-option>
+          <ion-option value="3">3 persons</ion-option>
+          <ion-option value="4">4 persons</ion-option>
+          <ion-option value="5">5 persons</ion-option>
+          <ion-option value="5+">5+ persons</ion-option>
+        </ion-select>
+        <!-- </ion-item> -->
+      </ion-item>
+    </div>
+    <!--select-box-->
+  </div>
+  <!--order-->
+  <div class="btn-wrap">
+    <button ion-button full type="button" class="book-button" (click)="onClickBookTable()">Reserve a Table</button>
+  </div>
+</ion-content>

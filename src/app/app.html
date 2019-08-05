@@ -1,0 +1,174 @@
+<ion-menu persistent="true" class="menu" [content]="content" *ngIf="this.platform.dir()==='ltr'" side="left">
+  <ion-content class="sidebar-menu">
+    <ion-row class="img-name-row">
+      <ion-col>
+        <img class="user-img" src="{{imageUrl}}">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col *ngIf="isLoggedin()">
+        <p class="user-name">{{name | uppercase}}</p>
+      </ion-col>
+    </ion-row>
+
+
+    <button menuClose class="menu-item" ion-item (click)="home()">
+      <ion-icon name="home" item-left></ion-icon>
+      {{'Home' | translate}}
+    </button>
+    <button menuClose class="menu-item" ion-item (click)="catagory()">
+      <ion-icon name="apps" item-left></ion-icon>
+      {{'Category'| translate}}
+    </button>
+    <button *ngIf="isCart()" menuClose class="menu-item" ion-item (click)="offer()">
+      <ion-icon name="pricetag" item-left></ion-icon>
+      {{'Offers'| translate}}
+      <ion-badge class="menu-badge">{{noOfItemsInOffer}}</ion-badge>
+    </button>
+    <button menuClose class="menu-item" ion-item (click)="addToCart()">
+      <ion-icon name="cart" item-left></ion-icon>
+      {{'MyCart'| translate}}
+      <ion-badge class="menu-badge">{{noOfItemsInCart}}</ion-badge>
+    </button>
+    <button *ngIf="isLoggedin()" menuClose class="menu-item" ion-item (click)="yourOrders()">
+      <ion-icon name="timer" item-left></ion-icon>
+      {{'Your Orders'| translate}}
+    </button>
+    <button *ngIf="isLoggedin()" menuClose class="menu-item" ion-item (click)="tableBooking()">
+      <ion-icon name="list-box" item-left></ion-icon>
+      {{'Book a Table' | translate}}
+    </button>
+    <button *ngIf="isLoggedin()" menuClose class="menu-item" ion-item (click)="bookingHistory()">
+      <ion-icon name="options" item-left></ion-icon>
+      <!-- <ion-badge class="menu-badge">4</ion-badge> -->
+      {{'Booking History' | translate}}
+    </button>
+    <button menuClose class="menu-item" ion-item (click)="news()">
+      <ion-icon name="paper" item-left></ion-icon>
+      {{'News'| translate}}
+      <ion-badge class="menu-badge">{{noOfItemsInNews}}</ion-badge>
+    </button>
+    <button *ngIf="isLoggedin()" menuClose class="menu-item" ion-item (click)="favourite()">
+      <ion-icon name="heart" item-left></ion-icon>
+      {{'Favourite'| translate}}
+      <!-- <ion-badge class="menu-badge">{{noOfItemsInFevrt}}</ion-badge> -->
+    </button>
+    <button menuClose class="menu-item" ion-item (click)="contact()">
+      <ion-icon name="call" item-left></ion-icon>
+      {{'Contact'| translate}}
+    </button>
+    <button menuClose class="menu-item" ion-item (click)="aboutUs()">
+      <ion-icon name="contacts" item-left></ion-icon>
+      {{'About Us'| translate}}
+    </button>
+    <button menuClose class="menu-item" ion-item *ngIf="isLoggedin()" (click)="invite()">
+      <ion-icon name="contacts" item-left></ion-icon>
+      {{'Invite Frieds' | translate}}
+    </button>
+    <button *ngIf="isLoggedin()" menuClose class="menu-item" ion-item (click)="chat()">
+      <ion-icon name="chatbubbles" item-left></ion-icon>
+      {{'Chat' | translate}}
+    </button>
+    <button *ngIf="isLoggedin()" menuClose class="menu-item" ion-item (click)="settings()">
+      <ion-icon name="settings" item-left></ion-icon>
+      {{'Settings'| translate}}
+    </button>
+    <button *ngIf="!isLoggedin()" menuClose class="menu-item" ion-item (click)="login()">
+      <ion-icon name="log-in" item-left></ion-icon>
+      {{'Login'| translate}}
+    </button>
+    <button *ngIf="isLoggedin()" ion-item (click)="logout()" menuClose class="menu-item">
+      <ion-icon name="log-out" item-left></ion-icon>
+      {{'Logout'| translate}}
+    </button>
+  </ion-content>
+</ion-menu>
+
+<ion-menu persistent="true" class="menu" [content]="content" *ngIf="this.platform.dir()==='rtl'" side="right">
+  <ion-content class="sidebar-menu">
+    <ion-row class="img-name-row">
+      <ion-col>
+        <img class="user-img" src="{{imageUrl}}">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col *ngIf="isLoggedin()">
+        <p class="user-name">{{name}}</p>
+      </ion-col>
+    </ion-row>
+
+
+    <button menuClose class="menu-item" ion-item (click)="home()">
+      <ion-icon name="home" item-left></ion-icon>
+      {{'Home' | translate}}
+    </button>
+    <button menuClose class="menu-item" ion-item (click)="catagory()">
+      <ion-icon name="apps" item-left></ion-icon>
+      {{'Category'| translate}}
+    </button>
+    <button *ngIf="isCart()" menuClose class="menu-item" ion-item (click)="offer()">
+      <ion-icon name="pricetag" item-left></ion-icon>
+      {{'Offers'| translate}}
+      <ion-badge class="menu-badge">{{noOfItemsInOffer}}</ion-badge>
+    </button>
+    <button menuClose class="menu-item" ion-item (click)="addToCart()">
+      <ion-icon name="cart" item-left></ion-icon>
+      {{'MyCart'| translate}}
+      <ion-badge class="menu-badge">{{noOfItemsInCart}}</ion-badge>
+    </button>
+    <button *ngIf="isLoggedin()" menuClose class="menu-item" ion-item (click)="yourOrders()">
+      <ion-icon name="timer" item-left></ion-icon>
+      {{'Your Orders'| translate}}
+    </button>
+    <button *ngIf="isLoggedin()" menuClose class="menu-item" ion-item (click)="tableBooking()">
+      <ion-icon name="list-box" item-left></ion-icon>
+      {{'Book a Table' | translate}}
+    </button>
+    <button *ngIf="isLoggedin()" menuClose class="menu-item" ion-item (click)="bookingHistory()">
+      <ion-icon name="options" item-left></ion-icon>
+      <!-- <ion-badge class="menu-badge">4</ion-badge> -->
+      {{'Booking History' | translate}}
+    </button>
+    <button menuClose class="menu-item" ion-item (click)="news()">
+      <ion-icon name="paper" item-left></ion-icon>
+      {{'News'| translate}}
+      <ion-badge class="menu-badge">{{noOfItemsInNews}}</ion-badge>
+    </button>
+    <button *ngIf="isLoggedin()" menuClose class="menu-item" ion-item (click)="favourite()">
+      <ion-icon name="heart" item-left></ion-icon>
+      {{'Favourite'| translate}}
+      <!-- <ion-badge class="menu-badge">{{noOfItemsInFevrt}}</ion-badge> -->
+    </button>
+    <button menuClose class="menu-item" ion-item (click)="contact()">
+      <ion-icon name="call" item-left></ion-icon>
+      {{'Contact'| translate}}
+    </button>
+    <button menuClose class="menu-item" ion-item (click)="aboutUs()">
+      <ion-icon name="contacts" item-left></ion-icon>
+      {{'About Us'| translate}}
+    </button>
+    <button menuClose class="menu-item" ion-item *ngIf="isLoggedin()" (click)="invite()">
+      <ion-icon name="contacts" item-left></ion-icon>
+      {{'Invite Frieds' | translate}}
+    </button>
+    <button *ngIf="isLoggedin()" menuClose class="menu-item" ion-item (click)="chat()">
+      <ion-icon name="chatbubbles" item-left></ion-icon>
+      {{'Chat' | translate}}
+    </button>
+    <button *ngIf="isLoggedin()" menuClose class="menu-item" ion-item (click)="settings()">
+      <ion-icon name="settings" item-left></ion-icon>
+      {{'Settings'| translate}}
+    </button>
+    <button *ngIf="!isLoggedin()" menuClose class="menu-item" ion-item (click)="login()">
+      <ion-icon name="log-in" item-left></ion-icon>
+      {{'Login'| translate}}
+    </button>
+    <button *ngIf="isLoggedin()" ion-item (click)="logout()" menuClose class="menu-item">
+      <ion-icon name="log-out" item-left></ion-icon>
+      {{'Logout'| translate}}
+    </button>
+  </ion-content>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

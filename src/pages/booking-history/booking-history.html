@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Booking History</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card class="card_content" *ngFor="let item of bookingDetails; let i=index;">
+    <ion-list class="overlay_top">
+      
+      <h2 class="id" padding> <ion-icon name="cafe"></ion-icon> &nbsp; Booking History : {{i+1}}</h2>
+    </ion-list>
+    <ion-card-content class="overlay_content">
+     
+      <ion-row class="details" text-center>
+        <ion-col col-6>
+          <h1 class="persons">{{item.person}}</h1>
+          <p class="subline">No. of Persons</p>
+        </ion-col>
+        <ion-col col-6>
+          <h1 class="persons">{{item?.tableNumber? item?.tableNumber: item.status }}</h1>
+          <p class="subline">Table No.</p>
+        </ion-col>
+      </ion-row>
+      <ion-row justify-content-center padding>
+        <ion-col col-6 class="date">
+          <ion-icon ios="ios-calendar-outline" name="calendar" class="icon"></ion-icon>
+          <h3 class="descrption">{{item.date}}</h3>
+        </ion-col>
+        <ion-col col-6 class="time">
+          <ion-icon ios="ios-clock-outline" name="clock" class="icon"></ion-icon>
+          <h3 class="descrption">{{item.time}}</h3>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+    <ion-list class="overlay_bottom" padding>
+      <ion-list col-6 class="status">
+        <h4 style="color: white;"> Status: {{item.status}}</h4>
+        <!-- <ion-icon padding-left ios="ios-heart" name="heart" class="icon" ></ion-icon> -->
+      </ion-list>
+      <!-- <ion-list col-6 class="rating">
+          <h4>Rating</h4>
+          <div class="star">
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star-half"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon>
+          </div>
+        </ion-list> -->
+    </ion-list>
+  </ion-card>
+</ion-content>

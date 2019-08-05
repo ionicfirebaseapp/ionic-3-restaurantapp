@@ -1,0 +1,14 @@
+page-category {
+  ion-label {
+    white-space: normal;
+  }
+  .heading {
+    font-size: 15px;
+    font-weight: 700;
+    color: $grey;
+  }
+  .item-md ion-thumbnail img {
+    height: 5em;
+    width: 5em;
+  }
+}

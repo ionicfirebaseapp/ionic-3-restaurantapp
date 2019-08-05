@@ -1,0 +1,87 @@
+<ion-header>
+    <ion-navbar hideBackButton="true">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="login">
+    <img class="logo" src="assets/img/logo-icon.png">
+    <form [formGroup]="registration" (ngSubmit)="onSubmit()">
+        <ion-row>
+            <ion-col col-12>
+                <ion-item>
+                    <ion-label>{{"Name:" | translate}}</ion-label>
+                    <ion-input type="text" name="name" formControlName="name" required=""></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <!--email-->
+        <ion-row>
+            <ion-col col-12>
+                <ion-item>
+                    <ion-label>{{"Email:" | translate}}</ion-label>
+                    <ion-input type="email" name="email" formControlName="email" required=""></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <!--Mobile No-->
+        <ion-row>
+            <ion-col col-12>
+                <ion-item>
+                    <ion-label>{{"Mobile No:" | translate}}</ion-label>
+                    <ion-input type="tel" name="mobileNo" id="mobileNo" formControlName="mobileNo"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <!--password-->
+        <ion-row>
+            <ion-col col-12>
+                <ion-item>
+                    <ion-label>{{"Password:" | translate}}</ion-label>
+                    <ion-input type="password" name="password" id="password" formControlName="password"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <!--button-->
+        <ion-row>
+            <ion-col col-12>
+                <button class="login-btn" type="submit" [disabled]="!registration.valid" ion-button>{{"Register" | translate}}
+                </button>
+            </ion-col>
+        </ion-row>
+    </form>
+    <!--login with-->
+    <!-- <ion-row>
+        <ion-col col-12>
+            <p text-center>{{"REGISTER WITH" | translate}}</p>
+        </ion-col>
+    </ion-row> -->
+
+    <!--Social login-->
+    <!-- <ion-row>
+        <ion-col text-center col-12>
+            <span (click)="doFbLogin()">
+                <img class="social-icon" src="assets/img/fb.png">
+            </span>
+            <span (click)="googleLogin()">
+                <img class="social-icon" src="assets/img/g+.png">
+            </span>
+            <span (click)="twitterLogin()">
+                <img class="social-icon" src="assets/img/twitter.png">
+            </span>
+        </ion-col>
+    </ion-row> -->
+    <!--go to registration-->
+    <ion-row>
+        <ion-col col-12>
+            <a (click)="navLogin()">
+                <p text-center>{{"ALREADY REGISTERED !" | translate}}</p>
+            </a>
+        </ion-col>
+    </ion-row>
+</ion-content>

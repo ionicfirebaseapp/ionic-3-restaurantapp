@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title class="title">{{"Category" | translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only color="royal" (click)="navcart()" class="header-btn-cart">
+                <ion-icon name="cart"></ion-icon>
+                <ion-badge class="carts" item-right color="danger">{{noOfItems}}</ion-badge>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor="let category of Categories">
+        <ion-list>
+            <ion-item (click)="navigate(category.$key)">
+                <ion-thumbnail item-left>
+                    <img src="{{category.thumb}}">
+                </ion-thumbnail>
+                <p class="heading">{{category.title}}</p>
+                <p>{{category.description |limitPipe:50}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+</ion-content>

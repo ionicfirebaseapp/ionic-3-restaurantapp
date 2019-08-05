@@ -1,0 +1,36 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{"Order Status" | translate}}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-row>
+        <div class="top">
+            <p>{{"Your Order Status" | translate}}</p>
+        </div>
+    </ion-row>
+
+    <ion-list class="status-block">
+        <ion-item *ngFor="let order of orderStatus">
+            <ion-row>
+                <ion-col col-1>
+                    <ion-icon class="checked" name="checkmark-circle"></ion-icon>
+                </ion-col>
+                <ion-col col-11>
+                    <p class="time">
+                        <ion-icon name="time"></ion-icon> &nbsp; {{order.time | date:'medium'}}
+                    </p>
+                    <p> {{order.title}} </p>
+                </ion-col>
+            </ion-row>
+        </ion-item>
+    </ion-list>
+    <p class="thanx">
+        <ion-icon name="thumbs-up"></ion-icon>
+        {{"Thanks for shopping with us." | translate}}
+    </p>
+</ion-content>

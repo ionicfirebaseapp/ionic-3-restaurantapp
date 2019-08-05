@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{"About Us" | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-slides initialSlide=0 speed=3000 loop=true autoplay=1 dir="rtl">
+        <ion-slide>
+            <img src="assets/img/about_us.jpg" class="slider-img">
+            <div class="card-title">
+                {{"We provide better service" | translate}}
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <img src="assets/img/about-us.jpg" class="slider-img">
+            <div class="card-title">
+                {{"We believe satisfaction of our client" | translate}}
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <img src="assets/img/about_us.jpg" class="slider-img">
+            <div class="card-title">
+                {{"We provide better service" | translate}}
+            </div>
+        </ion-slide>
+    </ion-slides>
+
+    <!--about-->
+    <div class="wrapper">
+        <h4 class="heading">{{"About Us" | translate}} </h4>
+        <p class="details">
+            Pietech Solution is a global information technology, consulting and outsourcing company was founded by a highly motivated
+            groups of marketing Team, software Developer.Talented, driven and principled people who are passionate about
+            IT services, came together because they wanted to do something special. Special work for our clients is the front
+            line, revolutionizing the way the industry works is a gradual effect, improving Industry through services is
+            our long term goal.We offer a variety of services in the area of Mobile Application Development, Software Development
+            ,Web Application development,CRM Business application,Responsive websites Design and Online Marketing.
+        </p>
+
+        <!--Get in touch-->
+        <h4 class="heading">{{"Get In Touch" | translate}} &nbsp;
+            <ion-icon name="arrow-dropdown"></ion-icon>
+        </h4>
+        <ion-card>
+            <ion-card-content (click)="callUs()">
+                <ion-icon name="call"></ion-icon> &nbsp; {{"Call us" | translate}}
+            </ion-card-content>
+            <ion-card-content (click)="contact()">
+                <ion-icon name="mail"></ion-icon> &nbsp; {{"Email us" | translate}}
+            </ion-card-content>
+            <ion-card-content (click)="gotogoogleMap()">
+                <ion-icon name="locate"></ion-icon> &nbsp; {{"Locate us" | translate}}
+            </ion-card-content>
+        </ion-card>
+    </div>
+
+</ion-content>

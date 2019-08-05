@@ -1,0 +1,91 @@
+page-offer {
+
+  .full-slide {
+    height: 100%;
+  }
+  .slider-img {
+    height: 330px;
+  }
+  .card-title {
+    position: absolute;
+    font-size: 2.6rem;
+    width: 100%;
+    color: $white;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 8px 0px;
+  }
+  .swiper-pagination-bullet-active {
+    background: $primary;
+  }
+  .overlay {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    display: inline-flex;
+    position: relative;
+  }
+  .swiper-pagination-fraction,
+  .swiper-pagination-custom,
+  .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 5px;
+  }
+  .item-name {
+    text-align: center;
+    font-size: 2rem;
+    color: $primary;
+  }
+
+  .offer-label {
+    position: absolute;
+    top: 0px;
+    left: 12px;
+    z-index: 999;
+  }
+  .price {
+    text-align: left;
+    padding: 0 0 0 1em;
+    margin: 5px 0px;
+    font-size: 15px;
+  }
+  .desc {
+    @extend .price;
+  }
+  .total {
+    font-size: 20px;
+    font-weight: 700;
+    color: $primary;
+  }
+  .line {
+    text-decoration: line-through;
+    color: $grey;
+  }
+  .square {
+    display: block;
+    width: 40px;
+    line-height: 36px;
+    font-size: 0.8em;
+    background-color: $danger;
+    color: $white;
+    text-align: center;
+  }
+  .triangle {
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid $danger;
+  }
+  .btn-add-to-cart {
+    background-color: $primary !important;
+    color: #fff;
+    padding: 22.2px;
+    box-shadow: none;
+    font-size: 14px;
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+  }
+  .slide-zoom {
+    height: 100%;
+  }
+}

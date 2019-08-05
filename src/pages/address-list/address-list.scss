@@ -1,0 +1,133 @@
+page-address-list {
+  .content {
+    background-image: url(../assets/img/address-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .amount-block {
+    background-color: $light;
+    margin: 0 0 1em 0;
+    .loyality-check {
+      .label {
+        color: $grey;
+        font-size: 1.6rem;
+      }
+    }
+    .total {
+      font-size: 12px;
+      color: $grey;
+      font-style: italic;
+      padding: 0 5px 0 16px;
+      .currency {
+        font-size: 16px;
+        color: $primary !important;
+      }
+    }
+    .right {
+      float: right;
+    }
+    .item {
+      background-color: transparent;
+    }
+    .checkbox .checkbox-checked {
+      border-color: $primary;
+      background-color: $primary;
+    }
+    .item-inner {
+      border-bottom: 0 !important;
+    }
+    .checkbox {
+      margin: 9px 36px 9px 20px !important;
+    }
+  }
+
+  .warning {
+    color: $primary;
+    margin-left: 15px;
+  }
+  .item {
+    padding-left: 0;
+    .label {
+      margin: 13px 8px 13px 0;
+      padding-left: 16px;
+      font-size: 1.8rem;
+    }
+    ion-icon {
+      font-size: 1em;
+      float: right;
+      font-weight: 700;
+    }
+  }
+  .booking-block {
+    margin: 1em 0;
+
+    .col {
+      padding: 0 !important;
+    }
+    .border {
+      border-right: 1px solid;
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+    .booking-opt {
+      padding: 0;
+      background-color: $dark;
+
+      .label {
+        margin-left: 8px;
+        color: $white;
+      }
+      .item-inner {
+        border: 0;
+      }
+    }
+    .radio .radio-checked {
+      display: none;
+    }
+    .radio .radio-inner {
+      background-color: $primary !important;
+    }
+    .radio .radio-icon {
+      display: none;
+    }
+    .item-radio-checked {
+      background-color: $primary !important;
+    }
+  }
+  .button {
+    height: 46px;
+    font-size: 1.8rem;
+    border-radius: 0;
+    background-color: $primary;
+    margin-top: 1em;
+  }
+  .add {
+    background-color: $light-grey;
+    border: 0;
+  }
+  .select-address {
+    .col {
+      padding: 0 15px;
+      border-bottom: 1px solid;
+      border-color: rgba(0, 0, 0, 0.1);
+      .show-address {
+        font-size: 1.5rem;
+        margin: 10px 0;
+      }
+    }
+  }
+  .radio .radio-checked {
+    border-color: $primary !important;
+  }
+  .radio .radio-inner {
+    background-color: $primary !important;
+  }
+  .radio-ios .radio-checked .radio-inner {
+    background-color: transparent !important;
+    border-color: $primary;
+  }
+  .radio-md .radio-icon {
+    left: 5px !important;
+  }
+}

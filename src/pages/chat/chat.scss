@@ -1,0 +1,131 @@
+page-chat {
+  .chat-bg {
+    background-image: url(../assets/img/chat-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .scroll-content {
+    margin-bottom: 70px;
+  }
+  .item {
+    color: #fff;
+    background-color: transparent;
+    height: 4rem;
+    border-bottom: 0 !important;
+  }
+  .item.item-block .item-inner {
+    padding-right: 0px;
+    border-bottom: 0;
+  }
+  .item.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+  .list .item-block .item-inner {
+    border-bottom: 0 !important;
+  }
+  .chat-box {
+    background-color: $light-white;
+    margin: 10px 15px;
+    padding: 8px;
+    position: relative;
+    border-radius: 0px 30px 30px 30px;
+    box-shadow: 3px 3px 12px 0px rgba(46, 50, 124, 0.26);
+    .chat-header {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      .name {
+        color: $white;
+        font-weight: 700;
+        overflow: hidden;
+        padding-left: 4px;
+      }
+      .time {
+        color: $white;
+        font-size: 9px;
+        width: 100%;
+        text-align: right;
+        padding-right: 15px;
+        margin: 3px 0;
+      }
+    }
+    .msg {
+      margin: 5px;
+      line-height: 20px;
+      color: $white;
+      text-align: justify;
+    }
+  }
+  .right {
+    float: right;
+    border: 1px solid $light-green !important;
+  }
+  // chat-box right side
+  .chat-box-right {
+    @extend .chat-box;
+    border-radius: 30px 0 30px 30px;
+    background-color: $light-green;
+    box-shadow: 3px 3px 12px 0px rgba(46, 50, 124, 0.26);
+  }
+  .thumb {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding: 0px;
+    border: 1px solid $light-white;
+  }
+  ion-footer {
+    position: fixed;
+    z-index: 10;
+    display: block;
+    width: 100%;
+    bottom: 0;
+    .toolbar-ios {
+      min-height: 56px;
+    }
+    .toolbar-background {
+      background: transparent !important;
+    }
+  }
+  .input-md[clearInput] .text-input {
+    padding-right: 30px;
+    color: #000;
+  }
+  .chat-field {
+    border: none;
+    padding: 0px 0 0px 8px !important;
+  }
+  .send-img-txt {
+    color: #144a48;
+    padding-left: 12px;
+    font-size: 13px;
+  }
+  .button {
+    background-color: transparent;
+    color: $primary;
+    box-shadow: none;
+    float: right;
+    padding: 0;
+  }
+  .button:hover:not(.disable-hover) {
+    background-color: transparent;
+  }
+  .enter-btn {
+    font-size: 36px;
+    float: right;
+    margin: 2px 5px 0px 0px;
+  }
+  .text-input {
+    margin: 0px;
+    color: $black;
+  }
+  .chat-footer {
+    background-color: $light;
+    z-index: 999;
+    border-top: 1px solid #fff;
+    height: 4em;
+    width: 100%;
+  }
+}

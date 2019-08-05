@@ -1,0 +1,73 @@
+page-home {
+  h2 {
+    margin-top: 1rem;
+  }
+  /*slider*/
+  .grid {
+    padding: 0px;
+    .slides {
+      .overlay {
+        background-image: linear-gradient(
+          rgba(0, 0, 0, 0.4),
+          rgba(0, 0, 0, 0.4)
+        );
+        display: inline-flex;
+      }
+      .slider-img {
+        height: 220px;
+        width: 100%;
+        position: relative;
+        z-index: -111;
+      }
+      .slider-text {
+        color: #fff;
+        font-size: 22px;
+        padding: 5px;
+        position: absolute;
+        bottom: 0;
+        margin: 5px 0px;
+      }
+      .swiper-pagination-bullet {
+        background: $primary !important;
+      }
+    }
+
+    //banner image
+    .card-title {
+      position: absolute;
+      top: 36%;
+      font-size: 2em;
+      width: 100%;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    /*Categories*/
+
+    .categories {
+      flex-wrap: wrap;
+      h2 {
+        margin-top: -12px;
+        font-size: 2.7rem;
+        color: rgba(66, 66, 66, 0.87);
+        font-weight: 500;
+      }
+      img {
+        height: 110px;
+        width: 100%;
+        position: relative;
+        z-index: -111;
+      }
+      .text-over-img {
+        color: #fff;
+        font-size: 18px;
+        padding: 5px;
+        background-color: rgba(119, 119, 119, 0.6);
+        position: relative;
+        width: 100%;
+        margin: -34px 0px 0px 0px;
+        text-align: center;
+      }
+    }
+  }
+}

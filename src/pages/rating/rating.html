@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Write Review</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="product-rating">
+      <rating name="rating" id="rating" [(ngModel)]="review.rating" readOnly="false" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half"
+        starIconName="star" nullable="false">
+      </rating>
+    </div>
+
+    <ion-row>
+      <ion-col col-12>
+
+        <ion-label>Review</ion-label>
+        <ion-textarea rows="3" name="message" id="message" [(ngModel)]="review.comment" required></ion-textarea>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <button class="submit-button" ion-button block type='submit' [disabled]="!f.valid"> Submit</button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+
+</ion-content>

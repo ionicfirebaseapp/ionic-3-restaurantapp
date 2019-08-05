@@ -1,0 +1,83 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{"Settings" | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="login">
+        <ion-row>
+            <img class="img" [src]="url">
+            <br>
+        </ion-row>
+        <ion-row>
+            <input type="file" name="file" id="file" class="inputfile" (change)="readUrl($event)">
+            <label for="file" class="upload">
+                <ion-icon ios="ios-cloud-upload" md="md-cloud-upload"></ion-icon>
+            </label>
+        </ion-row>
+        <p class="name">{{user.name}}</p>
+    </div>
+    <ion-list>
+        <ion-item class="select-item">
+            <ion-label>{{"Language:" |translate }}</ion-label>
+            <ion-select [(ngModel)]="value" (ionChange)="changeLanguage()">
+                <ion-option *ngFor="let option of options" value="{{option.value}}"> {{option.language }}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <ion-list>
+            <ion-item *ngIf="user.notification == true">
+                <ion-label primary>{{"Notifications" | translate}}</ion-label>
+                <ion-toggle primary checked="true" name="name" id="name" [(ngModel)]="user.notification"></ion-toggle>
+
+            </ion-item>
+            <ion-item *ngIf="user.notification == false">
+                <ion-label primary>{{"Notifications" | translate}}</ion-label>
+                <ion-toggle primary checked="false" name="name" id="name" [(ngModel)]="user.notification"></ion-toggle>
+
+            </ion-item>
+            <!--card no-->
+            <ion-item>
+                <ion-label>{{"User Name:" | translate}}</ion-label>
+                <ion-input type="text" name="name" id="name" placeholder="{{'name' | translate}}" [(ngModel)]="user.name" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>{{"Email:" | translate}}</ion-label>
+                <ion-input type="email" name="email" id="email" placeholder="{{'email' | translate}}" [(ngModel)]="user.email" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>{{"Mobile Number:" | translate}}</ion-label>
+                <ion-input type="text" name="mobileNo" id="mobileNo" placeholder="mobile number" [(ngModel)]="user.mobileNo" required></ion-input>
+            </ion-item>
+            <!--       <ion-item>
+                    <ion-label>Card Number:</ion-label>
+                    <ion-input type="text" name="card" id="card" placeholder="5172628928"
+                               [(ngModel)]="user.card"></ion-input>
+                  </ion-item> -->
+            <!--name on card-->
+            <!--       <ion-item>
+                    <ion-label>Name on card:</ion-label>
+                    <ion-input type="text" name="cardName" id="cardName" placeholder="Your card Name"
+                               [(ngModel)]="user.cardName"></ion-input>
+                  </ion-item> -->
+            <!--cvv-->
+            <!--       <ion-item>
+                    <ion-label>Cvv:</ion-label>
+                    <ion-input type="number" name="cvv" id="cvv" placeholder="234"
+                               [(ngModel)]="user.cvv"></ion-input>
+                  </ion-item> -->
+            <!--date-->
+            <!--       <ion-item>
+                    <ion-label>Date of expiry:</ion-label>
+                    <ion-input type="number" name="date" id="date" placeholder="25/06/2020"
+                               [(ngModel)]="user.date"></ion-input>
+                  </ion-item> -->
+        </ion-list>
+        <!--button-->
+        <button class="login-btn" ion-button type="submit" [disabled]="!f.valid">{{"Save" | translate}}</button>
+    </form>
+
+</ion-content>

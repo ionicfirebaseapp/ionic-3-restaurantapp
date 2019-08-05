@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar hideBackButton="true">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title class="title" text-center>{{"Thank you" | translate}}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="page-content">
+    <ion-row>
+        <ion-col col-12>
+            <div class="thanks">
+                <h2>{{"Thank you !" | translate}}</h2>
+                <p>{{"We love our customers and we value your business. we want to thank you for giving us the oppurtunity to
+                    serve you. Our customer service always open to hear feedback from you.thanks you!" | translate}}
+                </p>
+            </div>
+        </ion-col>
+    </ion-row>
+    <button ion-button outline class="continue-btn" (click)="home()">Shop more</button>
+</ion-content>

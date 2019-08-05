@@ -1,0 +1,65 @@
+page-orders {
+  ion-row {
+    border-bottom: 1px solid $light-grey;
+  }
+  .orders-list {
+    .orders-item {
+      padding: 0px !important;
+      img {
+        min-height: 60px;
+        width: 100%;
+      }
+      .item-name,
+      .date {
+        font-size: 12px;
+        line-height: 20px;
+      }
+      .item-price {
+        font-weight: 700;
+        color: $primary;
+      }
+      .btn-cart {
+        height: 2.2rem;
+        width: 2.2rem;
+        float: right;
+        box-shadow: none;
+      }
+      .btn-view {
+        float: right;
+        margin: 1.2rem 0.2rem;
+        padding: 0 1em;
+        height: 2.2rem;
+        background-color: $primary;
+        font-size: 1rem;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .empty-cart {
+    font-size: 10.2em;
+    display: block;
+    margin: 0.2em auto 0;
+    color: $white;
+  }
+  .bg {
+    background-image: url(../assets/img/bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  h4 {
+    font-size: 2.2rem;
+    text-align: center;
+    color: $white;
+  }
+  .continue-btn {
+    background-color: $primary !important;
+    color: #fff;
+    padding: 13.5px 30px;
+    box-shadow: none;
+    display: block;
+    margin: 2em auto 0;
+    border-radius: 0;
+  }
+}

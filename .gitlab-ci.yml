@@ -1,0 +1,15 @@
+stages:
+ - deploy
+
+deploy_to_firebase:
+   type: deploy
+   image: node:8.11.0
+   script:
+     - apt-get update
+     - npm install -g ionic
+     - npm install
+     - npm run ionic:build --prod
+     - npm install -g firebase-tools
+     - firebase deploy --token "$FIREBASE_TOKEN" --public www
+   only:
+     - master
