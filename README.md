@@ -14,12 +14,14 @@
   <a href="https://docs.ionicfirebaseapp.com/ionicrestaurantapp/"><strong>Explore Restaurant docs »</strong></a>
   <br>
   <br>
+  </p>
   <h2 align="center"> Looking for awesome Web and Mobiel applications and Custom  Backend! Browse Our Product!</h2> 
+  <h2 align="center">
   ·
   <a href="https://www.ionicfirebaseapp.com/products">Products</a>
   ·
   <a href="https://www.ionicfirebaseapp.com/blogs">Blog</a>
-</p>
+  </h2>
 
 ## Table of contents
 
