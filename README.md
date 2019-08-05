@@ -31,7 +31,9 @@
 
 ## Quick start
 
-Several quick start options are available:
+Ionic V3 version availalbe for free download. 
+
+Buy Ionic V4 from [ionicfirebaseapp](https://www.ionicfirebaseapp.com/products/ionic-firebase-restaurant-mobile-app)
 
 - [Download the latest release Free.](https://www.ionicfirebaseapp.com/products/ionic-firebase-restaurant-mobile-app)
 - Install with [npm](https://www.npmjs.com/): `npm install`
@@ -59,7 +61,15 @@ Read the [Getting started page](https://docs.ionicfirebaseapp.com/ionicrestauran
 
 ## What's included
 
-Within the download you'll find angular firebase version of ionic app. You can run the project and deploy on store. 
+Within the download you'll find angular firebase version of ionic app. Admin Dashboard to manage Menu or Orders not been availalbe in this repo. 
+
+You can Buy the Admin Dashboard from [ionicfirebaseapp](https://www.ionicfirebaseapp.com/products/backend-restaurant-firebase-app/)
+
+<p align="lef">
+  <a href="https://www.ionicfirebaseapp.com/products/backend-restaurant-firebase-app/">
+    <img src="https://res.cloudinary.com/dzu7tvexv/image/upload/f_auto,q_auto/v1533121925/t69hxnkvvylr65tmeose.jpg" alt="ionicfirebaseapp restaruant backend">
+  </a>
+</p>
 
 ## Bugs and feature requests
 
@@ -74,5 +84,21 @@ ionicfirebase restarurant documentation, included in this repo in the root direc
 
 Code and documentation copyright 2017-2019 the [IONICFIREBASEAPP Authors](https://ionicfirebaseapp.com) and [PIETECH SOLUTION PVT LTD.](https://pietechsolution.com.com) Code released under the [MIT License]. Docs released under [Creative Commons](https://creativecommons.org/licenses/by/3.0/).
 
+## Useful Links
+
+- [More products](https://www.ionicfirebaseapp.com/products) from ionicfirebaseapp
+- [Tutorials](https://www.youtube.com/channel/UCAes_uRy_H3pJ7z4OO78oIg)
+- [Freebies]() from Ionicfirebaseapp
+- [Affiliate Program](https://www.ionicfirebaseapp.com/affiliate) (earn money)
+
+### Social Media
+
+Twitter: <https://twitter.com/ionicfirebaseap>
+
+Facebook: <https://www.facebook.com/ionicfirebaseapp>
+
+Linkedin: <https://www.linkedin.com/company/ionicfirebaseapp>
+
+Instagram: <https://www.instagram.com/ionicfirebaseapp>
 
 
