@@ -34,7 +34,7 @@
 
 ## Quick start
 
-Ionic V3 version availalbe for free download. 
+Ionic V3 version is available for free download. 
 
 Buy Ionic V4 from [ionicfirebaseapp](https://www.ionicfirebaseapp.com/products/ionic-firebase-restaurant-mobile-app)
 
@@ -57,14 +57,14 @@ Read the [Getting started page](https://docs.ionicfirebaseapp.com/ionicrestauran
 9. Easy to integrate any local payment gateway
 10. Track your order status
 11. Offers, Coupons, Taxes applied
-12. Develop with Ionic 3 (ionic V4 availalbe for Pro-members)
+12. Develop with Ionic 3 (ionic V4 available for Pro-members)
 13. Clean UI and Easy to Customize
 14. Support Firebase and custom Rest API backend 
 15. This repo contains the firebase version of app. 
 
 ## What's included
 
-Within the download you'll find angular firebase version of ionic app. Admin Dashboard to manage Menu or Orders not been availalbe in this repo. 
+Within the download you'll find angular firebase version of ionic app. Admin Dashboard to manage Menu or Orders not been available in this repo. 
 
 You can Buy the Admin Dashboard from [ionicfirebaseapp](https://www.ionicfirebaseapp.com/products/backend-restaurant-firebase-app/)
 
