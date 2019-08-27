@@ -1,7 +1,7 @@
 
 <p align="center">
   <a href="https://www.ionicfirebaseapp.com/">
-    <img src="assets/img/logo-sm.png" height="100">
+    <img src="https://res.cloudinary.com/ionicfirebaseapp/image/upload/v1564048005/ifa-icon_srjsu3.png" alt="ionicfirebaseapp logo">
   </a>
 </p>
 <h3 align="center">IONICFIREBASEAPP</h3>
