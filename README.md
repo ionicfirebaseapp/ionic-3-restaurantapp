@@ -46,7 +46,7 @@ Read the [Getting started page](https://docs.ionicfirebaseapp.com/ionicrestauran
 
 ## Features
 
-1. Browse categories and there MenuItems
+1. Browse categories and their  MenuItems
 2. Add to cart MenuItems
 3. Table booking available
 4. Live chat with Restaurant Admin
@@ -57,10 +57,10 @@ Read the [Getting started page](https://docs.ionicfirebaseapp.com/ionicrestauran
 9. Easy to integrate any local payment gateway
 10. Track your order status
 11. Offers, Coupons, Taxes applied
-12. Develop with Ionic 3 (ionic V4 available for Pro-members)
+12. Develop with Ionic 3 / 4
 13. Clean UI and Easy to Customize
 14. Support Firebase and custom Rest API backend 
-15. This repo contains the firebase version of app. 
+15. Easy to integrate with our both Firebase and NodeJS backend. 
 
 ## What's included
 
