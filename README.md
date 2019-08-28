@@ -45,12 +45,12 @@ Buy Ionic V4 from [ionicfirebaseapp](https://www.ionicfirebaseapp.com/products/i
 Read the [Getting started page](https://docs.ionicfirebaseapp.com/ionicrestaurantapp/) for information on the ionic firebase restaurant app.
 
 <p align="center">
-  <a href="https://www.ionicfirebaseapp.com/">
+  <a href="https://www.ionicfirebaseapp.com/products/ionic-3-restaurant-mobile-app">
     <img src="https://res.cloudinary.com/dlx35qw0l/image/upload/v1566991563/Restaurant-Mobile-app_hynhwa.jpg" alt="ionic 3 restaurant mobile app">
   </a>
 </p>
 
-## Features
+## Mobile app Features
 
 1. Browse categories and their  MenuItems
 2. Add to cart MenuItems
@@ -74,11 +74,35 @@ Within the download you'll find angular firebase version of ionic app. Admin Das
 
 You can Buy the Admin Dashboard from [ionicfirebaseapp](https://www.ionicfirebaseapp.com/products/backend-restaurant-firebase-app/)
 
-<p align="lef">
+<p align="center">
   <a href="https://www.ionicfirebaseapp.com/products/backend-restaurant-firebase-app/">
-    <img src="https://res.cloudinary.com/dzu7tvexv/image/upload/f_auto,q_auto/v1533121925/t69hxnkvvylr65tmeose.jpg" alt="ionicfirebaseapp restaruant backend">
+    <img src="https://res.cloudinary.com/dlx35qw0l/image/upload/v1566992480/Restaurant-Dashboard_1_vldizk.jpg" alt="ionicfirebaseapp restaruant nodejs backend">
   </a>
 </p>
+
+1. Manage single restaurant
+2. Admin can access sales report for own restaurant
+3. Manage Categories and MenuItems
+4. Access new order and update there delivery status
+5. Table Booking Approve / Reject from Admin CMS
+6. Manage Coupon , Tag , Users List
+7. Send Push notifications to app users
+8. Loyalty points and Manage Delivery pincode Area
+9. Chat with customer
+10. Setting and Manage Blog/Articles
+11. Many more...
+
+## Restaurant Web app 
+
+Restaruant web app develop with angular 7 and integrated with both backend firebase and nodeJs version we have. You can check more details about both the webapp.
+
+<p align="center">
+  <a href="https://www.ionicfirebaseapp.com/products/restaurant-webapp-angular-firebase">
+    <img src="https://res.cloudinary.com/dlx35qw0l/image/upload/v1566991561/Firebase-Restaurant-Web-App_xzy6ao.jpg" alt="ionicfirebaseapp restaruant nodejs backend">
+  </a>
+</p>
+
+
 
 ## Bugs and feature requests
 
