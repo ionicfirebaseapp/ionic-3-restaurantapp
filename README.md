@@ -44,6 +44,12 @@ Buy Ionic V4 from [ionicfirebaseapp](https://www.ionicfirebaseapp.com/products/i
 
 Read the [Getting started page](https://docs.ionicfirebaseapp.com/ionicrestaurantapp/) for information on the ionic firebase restaurant app.
 
+<p align="center">
+  <a href="https://www.ionicfirebaseapp.com/">
+    <img src="https://res.cloudinary.com/dlx35qw0l/image/upload/v1566991563/Restaurant-Mobile-app_hynhwa.jpg" alt="ionic 3 restaurant mobile app">
+  </a>
+</p>
+
 ## Features
 
 1. Browse categories and their  MenuItems
