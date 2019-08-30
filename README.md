@@ -127,7 +127,7 @@ ionicfirebase restarurant documentation, included in this repo in the root direc
 
 ## Copyright and license
 
-Code and documentation copyright 2017-2019 the [IONICFIREBASEAPP Authors](https://ionicfirebaseapp.com) and [PIETECH SOLUTION PVT LTD.](https://pietechsolution.com.com) Code released under the [MIT License]. Docs released under [Creative Commons](https://creativecommons.org/licenses/by/3.0/).
+Code and documentation copyright 2017-2019 the [IONICFIREBASEAPP Authors](https://ionicfirebaseapp.com) and [PIETECH SOLUTION PVT LTD.](https://pietechsolution.com) Code released under the [MIT License]. Docs released under [Creative Commons](https://creativecommons.org/licenses/by/3.0/).
 
 ## Useful Links
 
