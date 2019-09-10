@@ -50,6 +50,10 @@ Read the [Getting started page](https://docs.ionicfirebaseapp.com/ionicrestauran
   </a>
 </p>
 
+## Video Installation Guide 
+
+[![IONIC FIREBASE RESTAURANT MOBILE APP INSTALLATION GUIDE](https://res.cloudinary.com/dlx35qw0l/image/upload/v1568114294/restaurant-thumbnail_dv7emx.jpg)](http://www.youtube.com/watch?v=vyt5fe5UON4)
+
 ## Mobile app Features
 
 1. Browse categories and their  MenuItems
