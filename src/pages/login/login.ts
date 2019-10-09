@@ -9,8 +9,8 @@ import {
 } from "ionic-angular";
 import { CustomValidators } from "ng2-validation";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { AngularFireAuth } from "angularfire2/auth";
-import { AngularFireDatabase } from "angularfire2/database";
+import { AngularFireAuth } from "@angular/fire/auth";
+import { AngularFireDatabase } from "@angular/fire/database";
 import { Facebook } from "@ionic-native/facebook";
 import * as firebase from "firebase";
 import { GooglePlus } from "@ionic-native/google-plus";
@@ -58,7 +58,7 @@ export class LoginPage {
       this.valForm.controls[c].markAsTouched();
     }
     if (this.valForm.valid) {
-      this.af.auth.signInWithEmailAndPassword(value.email, value.password).then(success => {
+      this.af.auth.signInWithEmailAndPassword(value.email, value.password).then((success: any) => {
         localStorage.setItem("uid", success.uid);
         this.publishEvent();
         this.navCtrl.setRoot("HomePage");
@@ -69,7 +69,7 @@ export class LoginPage {
   }
 
   private publishEvent() {
-    this.db.object("/users/" + this.af.auth.currentUser.uid).valueChanges().subscribe(userInfo => {
+    this.db.object("/users/" + this.af.auth.currentUser.uid).valueChanges().subscribe((userInfo: any) => {
       this.events.publish("imageUrl", userInfo);
     });
   }
@@ -87,28 +87,29 @@ export class LoginPage {
     permissions = ["public_profile", "email", "user_education_history"];
     this.facebook.login(permissions).then(success => {
       // console.log("facebook Success response1->", success);
-      this.facebook.api("/me?fields=id,name,email,gender,first_name,last_name", permissions).then(user => {
-        var provider = firebase.auth.FacebookAuthProvider.credential(
-          success.authResponse.accessToken
-        );
-        firebase.auth().signInWithCredential(provider).then(response => {
-          // console.log("facebook Success response2->", response);
-          this.db.object("/users/" + response.uid).update({
-            name: response.displayName,
-            email: response.email,
-            image: response.photoURL,
-            role: "User"
-          }).then(suc => {
-            // console.log("facebook update response3->", suc);
-            this.publishEvent();
+      this.facebook.api("/me?fields=id,name,email,gender,first_name,last_name", permissions)
+        .then((user: any) => {
+          var provider = firebase.auth.FacebookAuthProvider.credential(
+            success.authResponse.accessToken
+          );
+          firebase.auth().signInWithCredential(provider).then((response: any) => {
+            // console.log("facebook Success response2->", response);
+            this.db.object("/users/" + response.uid).update({
+              name: response.displayName,
+              email: response.email,
+              image: response.photoURL,
+              role: "User"
+            }).then(suc => {
+              // console.log("facebook update response3->", suc);
+              this.publishEvent();
+            });
+            localStorage.setItem("uid", response.uid);
+            this.navCtrl.setRoot("HomePage");
+          }).catch(error => {
+            // console.log("fb Error1" + JSON.stringify(error));
+            this.showAlert(error.message);
           });
-          localStorage.setItem("uid", response.uid);
-          this.navCtrl.setRoot("HomePage");
-        }).catch(error => {
-          // console.log("fb Error1" + JSON.stringify(error));
-          this.showAlert(error.message);
-        });
-      }),
+        }),
         error => {
           // console.log("fb Error2", error);
         };
@@ -130,7 +131,7 @@ export class LoginPage {
       });
       loading.present();
       var provider = firebase.auth.GoogleAuthProvider.credential(success.idToken);
-      firebase.auth().signInWithCredential(provider).then(response => {
+      firebase.auth().signInWithCredential(provider).then((response: any) => {
         // console.log("google response2", response);
         this.db.object("/users/" + response.uid).update({
           name: response.displayName,
@@ -165,7 +166,7 @@ export class LoginPage {
             });
             loading.present();
             var provider = firebase.auth.TwitterAuthProvider.credential(result.token, result.secret);
-            firebase.auth().signInWithCredential(provider).then(response => {
+            firebase.auth().signInWithCredential(provider).then((response: any) => {
               // console.log('twtter response2', response)
               this.db.object("/users/" + response.uid).update({
                 name: response.displayName,

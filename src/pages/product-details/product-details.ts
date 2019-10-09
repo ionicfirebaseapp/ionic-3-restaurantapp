@@ -7,8 +7,8 @@ import {
   ToastController,
   LoadingController
 } from "ionic-angular";
-import { AngularFireAuth } from "angularfire2/auth";
-import { AngularFireDatabase, AngularFireObject } from "angularfire2/database";
+import { AngularFireAuth } from "@angular/fire/auth";
+import { AngularFireDatabase, AngularFireObject } from "@angular/fire/database";
 import { CartService } from "../../pages/cart.service";
 
 @IonicPage()
@@ -67,7 +67,7 @@ export class ProductDetailsPage {
           )
           .valueChanges()
           .subscribe((res: any) => {
-            // console.log("fav response--", res);
+            console.log("fav response--", res);
             if (res != null) {
               this.isLiked = true;
             } else {

@@ -3,8 +3,8 @@ import { Nav, Platform, Events } from "ionic-angular";
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 
-import { AngularFireAuth } from "angularfire2/auth";
-import { AngularFireDatabase } from "angularfire2/database";
+import { AngularFireAuth } from "@angular/fire/auth";
+import { AngularFireDatabase } from "@angular/fire/database";
 
 import { OneSignal } from "@ionic-native/onesignal";
 import { SocialSharing } from "@ionic-native/social-sharing";
@@ -48,11 +48,17 @@ export class MyApp {
         .object("/users/" + this.uid)
         .valueChanges()
         .subscribe((res: any) => {
-          this.name = res.name;
-          this.imageUrl =
-            res.image != "" && res.image != null
-              ? res.image
-              : "assets/img/profile.jpg";
+          if (res != null) {
+            this.name = res.name;
+            this.imageUrl =
+              res.image != "" && res.image != null
+                ? res.image
+                : "assets/img/profile.jpg";
+          } else {
+            this.name = 'USER'
+            this.imageUrl = 'assets/img/profile.jpg';
+          }
+
         });
     }
     this.useTranslateService();

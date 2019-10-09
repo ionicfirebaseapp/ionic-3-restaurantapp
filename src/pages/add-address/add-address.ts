@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
-import { AngularFireDatabase } from "angularfire2/database";
-import { AngularFireAuth } from "angularfire2/auth";
+import { AngularFireDatabase } from "@angular/fire/database";
+import { AngularFireAuth } from "@angular/fire/auth";
 import { NgForm } from "@angular/forms";
 
 @IonicPage()
@@ -17,7 +17,7 @@ export class AddAddressPage {
     public db: AngularFireDatabase,
     public navCtrl: NavController,
     public navParams: NavParams
-  ) {}
+  ) { }
 
   addAddress(form: NgForm) {
     if (this.af.auth.currentUser) {

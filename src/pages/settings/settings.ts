@@ -8,8 +8,8 @@ import {
   Events
 } from "ionic-angular";
 import { NgForm } from "@angular/forms";
-import { AngularFireAuth } from "angularfire2/auth";
-import { AngularFireDatabase } from "angularfire2/database";
+import { AngularFireAuth } from "@angular/fire/auth";
+import { AngularFireDatabase } from "@angular/fire/database";
 import { TranslateService } from "@ngx-translate/core";
 import * as firebase from "firebase/app";
 

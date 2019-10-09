@@ -7,12 +7,12 @@ import {
   AlertController
 } from "ionic-angular";
 import { NgForm } from "@angular/forms";
-import { AngularFireAuth } from "angularfire2/auth";
+import { AngularFireAuth } from "@angular/fire/auth";
 import {
   AngularFireDatabase,
   AngularFireObject,
   AngularFireList
-} from "angularfire2/database";
+} from "@angular/fire/database";
 // import {
 //   PayPal,
 //   PayPalPayment,

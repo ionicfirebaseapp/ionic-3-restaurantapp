@@ -6,7 +6,7 @@ import {
   ToastController
 } from "ionic-angular";
 import { DatePicker } from "@ionic-native/date-picker";
-import { AngularFireDatabase } from "angularfire2/database";
+import { AngularFireDatabase } from "@angular/fire/database";
 
 @IonicPage()
 @Component({

@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
-import { AngularFireDatabase } from "angularfire2/database";
+import { AngularFireDatabase } from "@angular/fire/database";
 
 @IonicPage()
 @Component({

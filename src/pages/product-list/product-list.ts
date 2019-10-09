@@ -5,7 +5,8 @@ import {
   NavParams,
   LoadingController
 } from "ionic-angular";
-import { AngularFireDatabase, AngularFireList } from "angularfire2/database";
+import { AngularFireDatabase, AngularFireList } from "@angular/fire/database";
+import { map } from "rxjs/operators";
 
 @IonicPage()
 @Component({
@@ -40,16 +41,13 @@ export class ProductListPage {
 
       let subscription = this.menuItem
         .snapshotChanges()
-        .subscribe((data: any) => {
-          this.menuItems = [];
-          data.forEach(item => {
-            let temp = item.payload.val();
-            temp["$key"] = item.payload.key;
-            this.menuItems.push(temp);
-            subscription.unsubscribe();
-          });
-          loader.dismiss();
-          //this.items = [];
+        .pipe(
+          map(changes =>
+            changes.map(c => ({ $key: c.payload.key, ...c.payload.val() }))
+          )
+        ).subscribe((res: any) => {
+          this.menuItems = res;
+          console.log(res)
           for (var i = 0; i <= this.menuItems.length - 1; i++) {
             if (this.menuItems[i].category == this.id) {
               this.selectedItems.push(this.menuItems[i]);
@@ -66,8 +64,21 @@ export class ProductListPage {
               }
             }
           }
-        });
+          // subscription.unsubscribe();
+        })
+      // .subscribe((data: any) => {
+      //   this.menuItems = [];
+      //   data.forEach(item => {
+      //     let temp = item.payload.val();
+      //     temp["$key"] = item.payload.key;
+      //     this.menuItems.push(temp);
+      //     subscription.unsubscribe();
+      //   });
+      loader.dismiss();
+      //this.items = [];
+
     });
+
   }
 
   ionViewWillEnter() {

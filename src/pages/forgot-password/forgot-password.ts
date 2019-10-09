@@ -2,7 +2,7 @@ import { CustomValidators } from 'ng2-validation';
 import { Validators } from '@angular/forms';
 import { AlertController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
-import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { FormBuilder } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { Component } from '@angular/core';

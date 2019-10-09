@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, ToastController } from "ionic-angular";
 
-import { AngularFireDatabase } from "angularfire2/database";
+import { AngularFireDatabase } from "@angular/fire/database";
 
 @IonicPage()
 @Component({
@@ -23,7 +23,11 @@ export class BookingHistoryPage {
       .object("users/" + this.uid)
       .valueChanges()
       .subscribe((user: any) => {
-        this.username = user.name;
+        console.log(user);
+        if (user != null) {
+          this.username = user.name;
+        }
+
       });
     dbService
       .list("table-bookings")

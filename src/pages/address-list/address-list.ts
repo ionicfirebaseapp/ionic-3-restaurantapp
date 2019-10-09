@@ -8,8 +8,9 @@ import {
 import {
   AngularFireDatabase,
   AngularFireList
-} from "angularfire2/database";
-import { AngularFireAuth } from "angularfire2/auth";
+} from "@angular/fire/database";
+import { AngularFireAuth } from "@angular/fire/auth";
+import { map } from "rxjs/operators";
 
 // declare let google: any;
 
@@ -60,14 +61,22 @@ export class AddressListPage {
       this.db
         .list("/users/" + this.af.auth.currentUser.uid + "/address")
         .snapshotChanges()
-        .subscribe(res => {
-          this.addressList = [];
-          res.forEach(item => {
-            let temp = item.payload.toJSON();
-            temp["$key"] = item.payload.key;
-            this.addressList.push(temp);
-          });
-        });
+        .pipe(
+          map(changes =>
+            changes.map(c => ({ $key: c.payload.key, ...c.payload.val() }))
+          )
+        ).subscribe((res: any) => {
+          this.addressList = res;
+        })
+
+      // .subscribe(res => {
+      //   this.addressList = [];
+      //   res.forEach(item => {
+      //     let temp = item.payload.toJSON();
+      //     temp["$key"] = item.payload.key;
+      //     this.addressList.push(temp);
+      //   });
+      // });
 
       this.db
         .list("delivery-options")

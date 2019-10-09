@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
-import { AngularFireDatabase } from "angularfire2/database";
+import { AngularFireDatabase } from "@angular/fire/database";
 
 @IonicPage()
 @Component({
@@ -8,9 +8,9 @@ import { AngularFireDatabase } from "angularfire2/database";
   templateUrl: "order-details.html"
 })
 export class OrderDetailsPage {
-  orderId: any;
+  _orderId: any;
   index: any;
-  
+  public orderkey: any;
   orderDetails: any = {
     item: { review: "" }
   };
@@ -22,10 +22,12 @@ export class OrderDetailsPage {
     public navParams: NavParams
   ) {
     this.currency = JSON.parse(localStorage.getItem('currency'));
-    this.orderId = this.navParams.get("orderId");
+    this._orderId = this.navParams.get("orderId");
+    this.orderkey = this.navParams.get("orderKey");
+    console.log(this.orderkey)
     this.index = this.navParams.get("index");
     this.af
-      .object("/orders/" + this.orderId + "/cart/" + this.index)
+      .object("/orders/" + this._orderId + "/cart/" + this.index)
       .valueChanges()
       .subscribe((res: any) => {
         this.orderDetails = res;
@@ -39,7 +41,7 @@ export class OrderDetailsPage {
 
   rate(itemId) {
     this.navCtrl.push("RatingPage", {
-      orderId: this.orderId,
+      orderId: this._orderId,
       index: this.index,
       itemId: itemId
     });

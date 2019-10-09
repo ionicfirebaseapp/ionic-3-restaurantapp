@@ -2,8 +2,8 @@ import { Component, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { Content } from "ionic-angular/index";
 import { IonicPage, NavController } from "ionic-angular";
-import { AngularFireAuth } from "angularfire2/auth";
-import { AngularFireDatabase, AngularFireList } from "angularfire2/database";
+import { AngularFireAuth } from "@angular/fire/auth";
+import { AngularFireDatabase, AngularFireList } from "@angular/fire/database";
 
 @IonicPage()
 @Component({
@@ -29,7 +29,7 @@ export class ChatPage {
     public af: AngularFireAuth,
     public db: AngularFireDatabase,
     public navCtrl: NavController
-  ) {}
+  ) { }
 
   ionViewDidLoad() {
     let date = new Date();
@@ -52,9 +52,9 @@ export class ChatPage {
         });
       this.messageObserable = this.db.list("/messages/" + this.userId);
       this.messageObserable.valueChanges().subscribe(res => {
-              this.messageList = [];
-              this.messageList = res;
-              this.scrollToBottom();
+        this.messageList = [];
+        this.messageList = res;
+        this.scrollToBottom();
       });
     } else {
       this.navCtrl.push("HomePage");
@@ -71,6 +71,6 @@ export class ChatPage {
   scrollToBottom() {
     setTimeout(() => {
       this.content.scrollToBottom();
-    },100);
+    }, 100);
   }
 }

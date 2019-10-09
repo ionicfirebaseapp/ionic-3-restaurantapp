@@ -1,9 +1,9 @@
 import { NgModule, ErrorHandler } from "@angular/core";
 import { IonicApp, IonicModule, IonicErrorHandler } from "ionic-angular";
-import { AngularFireModule } from "angularfire2";
+import { AngularFireModule } from "@angular/fire";
 import { MyApp } from "./app.component";
-import { AngularFireAuthModule } from "angularfire2/auth";
-import { AngularFireDatabaseModule } from "angularfire2/database";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { firebaseConfig } from "./firebase.config";
 import { CartService } from "../pages/cart.service";
 import { HttpClientModule, HttpClient } from "@angular/common/http";

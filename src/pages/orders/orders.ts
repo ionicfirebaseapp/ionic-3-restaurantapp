@@ -1,8 +1,8 @@
 
 import { Component } from "@angular/core";
-import { IonicPage, NavController, LoadingController,NavParams } from "ionic-angular";
-import { AngularFireAuth } from "angularfire2/auth";
-import { AngularFireDatabase } from "angularfire2/database";
+import { IonicPage, NavController, LoadingController, NavParams } from "ionic-angular";
+import { AngularFireAuth } from "@angular/fire/auth";
+import { AngularFireDatabase } from "@angular/fire/database";
 
 @IonicPage()
 @Component({
@@ -15,7 +15,8 @@ export class OrdersPage {
 
   public noOfItems: number;
   public currency: {};
-  public orderId:any;
+  public orderId: any;
+  public key: any;
 
   constructor(
     public navParams: NavParams,
@@ -26,7 +27,7 @@ export class OrdersPage {
   ) {
 
     this.orderId = this.navParams.get("orderId");
-    
+    this.key = this.navParams.get('orderKey');
     console.log("orderID", this.orderId);
 
 
@@ -35,16 +36,16 @@ export class OrdersPage {
       let loader = this.loadingCtrl.create({
         content: "Please wait..."
       });
-         loader.present();
+      loader.present();
 
-        this.db.object("/orders/" + this.orderId + "/cart/")
+      this.db.object("/orders/" + this.orderId + "/cart/")
         .valueChanges()
         .subscribe((res: any) => {
           this.ordersDetails = res;
           console.log("details--" + JSON.stringify(this.ordersDetails));
           loader.dismiss();
         });
-   
+
     }
   }
 
@@ -53,10 +54,11 @@ export class OrdersPage {
     this.noOfItems = cart != null ? cart.length : null;
   }
 
-  orderDetails(index) {
+  orderDetails(index, key) {
     this.navCtrl.push("OrderDetailsPage", {
       index: index,
       orderId: this.orderId,
+      orderKey: this.key
     });
   }
 

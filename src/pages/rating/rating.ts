@@ -5,8 +5,8 @@ import {
   NavParams,
   ToastController
 } from "ionic-angular";
-import { AngularFireAuth } from "angularfire2/auth";
-import { AngularFireDatabase } from "angularfire2/database";
+import { AngularFireAuth } from "@angular/fire/auth";
+import { AngularFireDatabase } from "@angular/fire/database";
 
 @IonicPage()
 @Component({
@@ -53,7 +53,7 @@ export class RatingPage {
             comment: this.review.comment,
             userId: this.review.userId
           })
-          .then(response => {});
+          .then(response => { });
       } else {
         this.db
           .object(
@@ -72,11 +72,11 @@ export class RatingPage {
       this.db
         .object(
           "/orders/" +
-            this.orderId +
-            "/cart/" +
-            this.index +
-            "/item/" +
-            "/review"
+          this.orderId +
+          "/cart/" +
+          this.index +
+          "/item/" +
+          "/review"
         )
         .update(this.review)
         .then(success => {

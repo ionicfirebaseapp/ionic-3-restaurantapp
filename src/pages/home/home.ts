@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, LoadingController } from "ionic-angular";
-import { AngularFireDatabase, AngularFireList } from "angularfire2/database";
+import { AngularFireDatabase, AngularFireList } from "@angular/fire/database";
+import { map } from "rxjs/operators";
 
 @IonicPage()
 @Component({
@@ -37,15 +38,26 @@ export class HomePage {
       this.comingData.valueChanges().subscribe(data => {
         this.ComingData = data;
       });
-      this.categories.snapshotChanges().subscribe(data => {
-        this.Categories = [];
-        data.forEach(item => {
-          let temp = item.payload.toJSON();
-          temp["$key"] = item.payload.key;
-          this.Categories.push(temp);
-        });
-        loader.dismiss();
-      });
+      this.categories.snapshotChanges()
+        .pipe(
+          map(changes =>
+            changes.map(c => ({ $key: c.payload.key, ...c.payload.val() }))
+          )
+        ).subscribe((data: any) => {
+          this.Categories = data;
+          console.log(this.Categories);
+          loader.dismiss();
+        })
+
+      // .subscribe(data => {
+      //   this.Categories = [];
+      //   data.forEach(item => {
+      //     let temp = item.payload.toJSON();
+      //     temp["$key"] = item.payload.key;
+      //     this.Categories.push(temp);
+      //   });
+      //   loader.dismiss();
+      // });
     });
   }
 
@@ -63,6 +75,7 @@ export class HomePage {
   }
 
   navigate(id) {
+    console.log(id)
     this.navCtrl.push("ProductListPage", { id: id });
   }
 

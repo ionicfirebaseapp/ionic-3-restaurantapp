@@ -1,7 +1,8 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, ToastController } from "ionic-angular";
-import { AngularFireAuth } from "angularfire2/auth";
-import { AngularFireDatabase } from "angularfire2/database";
+import { AngularFireAuth } from "@angular/fire/auth";
+import { AngularFireDatabase } from "@angular/fire/database";
+import { map } from "rxjs/operators";
 
 @IonicPage()
 @Component({
@@ -25,14 +26,21 @@ export class FavouritePage {
       this.db
         .list("/users/" + this.af.auth.currentUser.uid + "/favourite/")
         .snapshotChanges()
-        .subscribe((res: any) => {
-          this.favouriteItems = [];
-          res.forEach(item => {
-            let temp = item.payload.val();
-            temp["$key"] = item.payload.key;
-            this.favouriteItems.push(temp);
-          });
-        });
+        .pipe(
+          map(changes =>
+            changes.map(c => ({ $key: c.payload.key, ...c.payload.val() }))
+          )
+        ).subscribe((res: any) => {
+          this.favouriteItems = res;
+        })
+      // .subscribe((res: any) => {
+      //   this.favouriteItems = [];
+      //   res.forEach(item => {
+      //     let temp = item.payload.val();
+      //     temp["$key"] = item.payload.key;
+      //     this.favouriteItems.push(temp);
+      //   });
+      // });
     }
   }
 

@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { NgForm } from "@angular/forms";
-import { AngularFireAuth } from "angularfire2/auth";
-import { AngularFireDatabase } from "angularfire2/database";
+import { AngularFireAuth } from "@angular/fire/auth";
+import { AngularFireDatabase } from "@angular/fire/database";
 import { EmailComposer } from "@ionic-native/email-composer";
 
 @IonicPage()
@@ -20,7 +20,7 @@ export class ContactPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public emailComposer: EmailComposer
-  ) {}
+  ) { }
 
   onSend(user: NgForm) {
     if (this.af.auth.currentUser) {
@@ -38,7 +38,7 @@ export class ContactPage {
       body: this.user.message,
       isHtml: true
     };
-    this.emailComposer.open(email, function() {});
+    this.emailComposer.open(email, function () { });
     this.user = "";
   }
 }

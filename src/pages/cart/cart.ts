@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { NavController, IonicPage, ToastController } from "ionic-angular";
 import { AlertController, LoadingController } from "ionic-angular";
-import { AngularFireDatabase, AngularFireObject } from "angularfire2/database";
+import { AngularFireDatabase, AngularFireObject } from "@angular/fire/database";
 
 @IonicPage()
 @Component({

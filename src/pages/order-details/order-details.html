@@ -14,7 +14,7 @@
                 <span class="order-desc">{{"Order Id:" | translate}}</span>
             </ion-col>
             <ion-col>
-                <span class="data">{{orderId}}</span>
+                <span class="data">{{orderkey}}</span>
             </ion-col>
         </ion-row>
         <ion-row>
@@ -40,8 +40,9 @@
                 <ion-col col-5>{{"Your Rating" | translate}}</ion-col>
                 <ion-col>
                     <span class="product-rating">
-                        <rating name="rating" id="rating" [(ngModel)]="orderDetails.item.review.rating" readOnly="true" max="5" emptyStarIconName="star-outline"
-                            halfStarIconName="star-half" starIconName="star" nullable="false">
+                        <rating name="rating" id="rating" [(ngModel)]="orderDetails.item.review.rating" readOnly="true"
+                            max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star"
+                            nullable="false">
 
                         </rating>
                     </span>
@@ -60,7 +61,8 @@
     </div>
     <!--rate button-->
 
-    <button ion-button full class="rating-Button" *ngIf="!orderDetails.item.review" (click)="rate(orderDetails.item.itemId)">
+    <button ion-button full class="rating-Button" *ngIf="!orderDetails.item.review"
+        (click)="rate(orderDetails.item.itemId)">
         {{"Rate Product" | translate}}
     </button>
 

@@ -13,8 +13,8 @@ import {
   FormControl,
   Validators
 } from "@angular/forms";
-import { AngularFireAuth } from "angularfire2/auth";
-import { AngularFireDatabase, AngularFireObject } from "angularfire2/database";
+import { AngularFireAuth } from "@angular/fire/auth";
+import { AngularFireDatabase, AngularFireObject } from "@angular/fire/database";
 
 @IonicPage()
 @Component({
@@ -37,19 +37,20 @@ export class RegistrationPage implements OnInit {
   ) { }
 
   onSubmit() {
-    this.af.auth.createUserWithEmailAndPassword(this.registration.value.email, this.registration.value.password).then(success => {
-      this.db.object("/users/" + success.uid).update({
-        name: this.registration.value.name,
-        email: this.registration.value.email,
-        mobileNo: this.registration.value.mobileNo,
-        role: "User"
+    this.af.auth.createUserWithEmailAndPassword(this.registration.value.email, this.registration.value.password)
+      .then((success: any) => {
+        this.db.object("/users/" + success.uid).update({
+          name: this.registration.value.name,
+          email: this.registration.value.email,
+          mobileNo: this.registration.value.mobileNo,
+          role: "User"
+        });
+        localStorage.setItem("uid", success.uid);
+        this.navCtrl.setRoot("HomePage");
+      }).catch(error => {
+        console.log("Firebase failure: " + JSON.stringify(error));
+        this.showAlert(error.message);
       });
-      localStorage.setItem("uid", success.uid);
-      this.navCtrl.setRoot("HomePage");
-    }).catch(error => {
-      console.log("Firebase failure: " + JSON.stringify(error));
-      this.showAlert(error.message);
-    });
   }
 
   showAlert(message) {
