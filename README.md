@@ -6,7 +6,7 @@
 </p>
 <h3 align="center">IONICFIREBASEAPP</h3>
 
-<a href="https://www.ionicfirebaseapp.com/coupons" rel=no follow><img src="https://res.cloudinary.com/dlx35qw0l/image/upload/v1574401451/Codecanyon/Black_Friday_Banner_1.png" alt="black friday sale">
+<a href="https://www.ionicfirebaseapp.com/coupons" rel=no follow><img src="https://res.cloudinary.com/dlx35qw0l/image/upload/v1576219871/Codecanyon/Artboard_2_4.png" alt="christmas sale">
 </a>
  <a href="https://www.ionicfirebaseapp.com/products/ionic-firebase-restaurant-mobile-app"> <h3 align="center">GET IONIC V4 </h3> </a>
 
