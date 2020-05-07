@@ -1,6 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
 import { IonicPage, NavController, Slides } from "ionic-angular";
-import { AngularFireDatabase } from "@angular/fire/database";
+import { AngularFireDatabase, AngularFireList } from "@angular/fire/database";
 import { map } from "rxjs/operators";
 
 @IonicPage()
@@ -11,12 +11,13 @@ import { map } from "rxjs/operators";
 export class OfferPage {
   @ViewChild(Slides) slides: Slides;
   offerData: Array<any>;
+  offers:AngularFireList<any>;
   public currency: {};
 
   constructor(public af: AngularFireDatabase, public navCtrl: NavController) {
     this.currency = JSON.parse(localStorage.getItem('currency'));
-    this.af.list("/menuItems", ref => ref.orderByChild("offer").equalTo(true))
-      .snapshotChanges()
+    this.offers=this.af.list("/menuItems", ref => ref.orderByChild("offer").equalTo(true));
+    this.offers.snapshotChanges()
       .pipe(
         map(changes =>
           changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))

@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, ToastController } from "ionic-angular";
 import { AngularFireAuth } from "@angular/fire/auth";
-import { AngularFireDatabase } from "@angular/fire/database";
+import { AngularFireDatabase, AngularFireList } from "@angular/fire/database";
 import { map } from "rxjs/operators";
 
 @IonicPage()
@@ -13,7 +13,7 @@ export class FavouritePage {
   favouriteItems: any[] = [];
   Cart: any[];
   noOfItems: number;
-
+  favourites: AngularFireList<any>;
   constructor(
     public af: AngularFireAuth,
     public db: AngularFireDatabase,
@@ -23,9 +23,8 @@ export class FavouritePage {
     this.Cart = JSON.parse(localStorage.getItem("Cart"));
     this.noOfItems = this.Cart != null ? this.Cart.length : null;
     if (this.af.auth.currentUser) {
-      this.db
-        .list("/users/" + this.af.auth.currentUser.uid + "/favourite/")
-        .snapshotChanges()
+      this.favourites=this.db.list("/users/" + this.af.auth.currentUser.uid + "/favourite/");
+      this.favourites.snapshotChanges()
         .pipe(
           map(changes =>
             changes.map(c => ({ $key: c.payload.key, ...c.payload.val() }))
