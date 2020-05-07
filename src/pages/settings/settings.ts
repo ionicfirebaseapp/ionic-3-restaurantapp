@@ -24,6 +24,10 @@ export class Settings {
   value: any;
   options = [
     {
+      language: "ESPAÑOL",
+      value: "es"
+    },
+    {
       language: "ENGLISH",
       value: "en"
     },
@@ -73,7 +77,7 @@ export class Settings {
       contentType: "image/*"
     };
     let loader = this.loadingCtrl.create({
-      content: "please wait.."
+      content: "Espere porfavor.."
     });
     loader.present();
     this.storageRef
@@ -101,6 +105,9 @@ export class Settings {
     } else if (this.value == "ar") {
       this.platform.setDir("rtl", true);
       this.translate.use("ar");
+    } else if (this.value == "es") {
+      this.platform.setDir("ltr", true);
+      this.translate.use("es");
     } else {
       this.platform.setDir("ltr", true);
       this.translate.use("en");
@@ -118,7 +125,7 @@ export class Settings {
           mobileNo: this.user.mobileNo
         })
         .then(() => {
-          this.createToaster("user information updated successfully", 3000);
+          this.createToaster("Informacion Actualizada", 3000);
           this.events.publish("imageUrl", this.user);
         });
     }
