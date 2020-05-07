@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, LoadingController } from "ionic-angular";
 import { AngularFireAuth } from "@angular/fire/auth";
-import { AngularFireDatabase } from "@angular/fire/database";
+import { AngularFireDatabase, AngularFireList } from "@angular/fire/database";
 import { map } from "rxjs/operators";
 
 @IonicPage()
@@ -12,6 +12,7 @@ import { map } from "rxjs/operators";
 export class OrderListPage {
 
   ordersDetails: any[] = [];
+  orders_list:AngularFireList<any>;
   public noOfItems: number;
   public currency: {};
 
@@ -28,9 +29,8 @@ export class OrderListPage {
       });
       loader.present().then(() => {
         let userID = this.af.auth.currentUser.uid;
-        this.db
-          .list("/orders", ref => ref.orderByChild("userId").equalTo(userID))
-          .snapshotChanges()
+        this.orders_list=this.db.list("/orders", ref => ref.orderByChild("userId").equalTo(userID));
+        this.orders_list.snapshotChanges()
           .pipe(
             map(changes =>
               changes.map(c => ({ $key: c.payload.key, ...c.payload.val() }))

@@ -30,6 +30,7 @@ export class AddressListPage {
   cart: Array<any>;
   orderDetails: any = {};
   pincodes: Array<any>;
+  addresses: AngularFireList<any>;
   public pincodeMatched: boolean = false;
   public loyaltyPercentage: number = 0;
   public loyaltyPoints: number = 0;
@@ -58,9 +59,8 @@ export class AddressListPage {
       this.navCtrl.push("CartPage");
     }
     if (this.af.auth.currentUser) {
-      this.db
-        .list("/users/" + this.af.auth.currentUser.uid + "/address")
-        .snapshotChanges()
+      this.addresses=this.db.list("/users/" + this.af.auth.currentUser.uid + "/address");
+      this.addresses.snapshotChanges()
         .pipe(
           map(changes =>
             changes.map(c => ({ $key: c.payload.key, ...c.payload.val() }))
