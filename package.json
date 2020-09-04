@@ -51,7 +51,7 @@
     "cordova-plugin-facebook4": "^1.10.1",
     "cordova-plugin-geolocation": "^2.4.3",
     "cordova-plugin-googleplus": "^5.3.2",
-    "cordova-plugin-inappbrowser": "^1.7.2",
+    "cordova-plugin-inappbrowser": "^4.0.0",
     "cordova-plugin-splashscreen": "^4.1.0",
     "cordova-plugin-statusbar": "^2.4.3",
     "cordova-plugin-stripe": "^1.5.3",
